@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
+import Nav from './components/nav/Nav';
 
-const App = () => <div className="App">Hello World!</div>;
+const App = () => <Nav />;
 
 export default App;
