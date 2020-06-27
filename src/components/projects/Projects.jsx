@@ -7,7 +7,7 @@ import circuit from '../../images/circuit.png';
 import tiktaktoe from '../../images/tiktaktoe.png';
 
 const Projects = () => (
-	<div className="projects-container">
+	<div className="page-container projects">
 		<h1>My Projects</h1>
 
 		<div className="projects-wrapper">

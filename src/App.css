@@ -54,6 +54,7 @@ a {
 	background-color: var(--bg-primary);
 	transition: width 600ms ease;
 	overflow: hidden;
+	z-index: 10;
 }
 
 .navbar-nav {
@@ -157,9 +158,8 @@ a {
 		margin: 0;
 	}
 
-	/*This is for Container component*/
-	.container {
-		margin-left: 0;
+	.page-container {
+		padding: 2rem 1.2rem;
 	}
 
 	.projects-wrapper {
@@ -168,6 +168,10 @@ a {
 
 	.projects-container {
 		padding: 2rem !important;
+	}
+
+	.contacts {
+		margin-bottom: 5rem;
 	}
 }
 
@@ -195,8 +199,8 @@ a {
 		left: 0px;
 	}
 
-	/*This is for Container component*/
-	.container {
+	.page-container {
+		padding: 4rem;
 		margin-left: 5rem;
 	}
 
@@ -221,12 +225,12 @@ a {
 /*********************************************
 *************** PROJECTS PAGE ****************
 **********************************************/
-.projects-container {
-	padding: 4rem;
+
+.projects {
 	text-align: center;
 }
 
-.projects-container h1 {
+.page-container h1 {
 	color: rgb(230, 230, 230);
 	font-size: 2rem;
 	font-family: 'Nunito Sans', sans-serif;
@@ -276,4 +280,64 @@ a {
 	background-color: var(--background-third);
 	color: var(--text-secondary);
 	font-size: .8rem;
+}
+
+/*********************************************
+*************** CONTACTS PAGE ****************
+**********************************************/
+
+.contacts h1 {
+	text-align: center;
+}
+
+.contact-logo {
+	margin-bottom: 2rem;
+}
+
+.contacts form {
+	padding: 2rem;
+	background-color: var(--bg-primary);
+	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .3);
+	min-width: 40%;
+	max-width: 40rem;
+	margin: auto;
+}
+
+.form-item input,
+textarea {
+	padding: 1rem;
+	font-weight: bold;
+	color: var(--text-primary);
+	background-color: var(--background-third);
+	outline: none;
+	border: none;
+	width: 100%;
+	border-radius: 10px;
+	margin: 1rem 0;
+	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .3);
+}
+
+.form-msg textarea {
+	height: 12rem;
+	resize: vertical;
+}
+
+.contacts form input[type="submit"] {
+	padding: 1rem;
+	background-color: var(--highlight);
+	border: none;
+	font-weight: bold;
+	border-radius: 10px;
+	margin-top: 1rem;
+	color: var(--text-secondary);
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+	filter: grayscale(0);
+	transition: filter var(--transition-speed) ease-out;
+}
+
+.contacts form input[type="submit"]:hover {
+	filter: grayscale(50%);
 }
