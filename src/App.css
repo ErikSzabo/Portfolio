@@ -341,3 +341,9 @@ textarea {
 .contacts form input[type="submit"]:hover {
 	filter: grayscale(50%);
 }
+
+@media only screen and (orientation: landscape) and (max-height: 420px) {
+	.logo {
+		display: none;
+	}
+}
