@@ -28,7 +28,7 @@ const Projects = () => (
 				name="This website"
 				description="This is just my portfolio. The only reason why it's using React... Well, I didn't have a React project before."
 				img={portfolio}
-				langs={[ 'JavaScript', 'React' ]}
+				langs={[ 'JavaScript', 'CSS', 'React' ]}
 			/>
 
 			<ProjectListItem
@@ -40,9 +40,9 @@ const Projects = () => (
 
 			<ProjectListItem
 				name="TicTacToe Online"
-				description="Client - Server based tictactoe using python sockets module."
+				description="Client - Server based tictactoe using python sockets and pygame module."
 				img={tiktaktoe}
-				langs={[ 'Python' ]}
+				langs={[ 'Python', 'pygame', 'sockets' ]}
 			/>
 		</div>
 	</div>
