@@ -14,7 +14,7 @@ const colorMap = {
 		front: '#FFDA5D'
 	},
 	Java: {
-		background: '#ff5400',
+		background: '#E76F00',
 		front: '#242429'
 	},
 	React: {

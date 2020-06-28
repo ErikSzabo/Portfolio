@@ -6,9 +6,11 @@ import Projects from './components/projects/Projects';
 import Skills from './components/skills/Skills';
 import Contact from './components/contact/Contact';
 import Landing from './components/landing/Landing';
+import ThemeSwitcher from './components/ThemeSwitcher';
 
 const App = () => (
 	<Router>
+		<ThemeSwitcher />
 		<Nav />
 		<section className="container">
 			<Route exact path="/" component={Landing} />
