@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Wave from '../Wave';
 
 const Contact = () => {
 	const [ name, setName ] = useState('');
@@ -28,6 +29,7 @@ const Contact = () => {
 
 	return (
 		<div className="page-container contacts">
+			<Wave />
 			<h1 className="contact-logo">Contact Me</h1>
 			<form onSubmit={submit}>
 				<div className="form-item form-name">
@@ -63,7 +65,7 @@ const Contact = () => {
 						onChange={(e) => setMessage(e.target.value)}
 					/>
 				</div>
-				<input type="submit" value="Send the mail!" />
+				<input type="submit" value="Send message!" />
 			</form>
 		</div>
 	);

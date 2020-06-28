@@ -7,8 +7,12 @@ const ProjectListItem = (props) => {
 			<h3>{props.name}</h3>
 			<p>{props.description}</p>
 			<div className="langs">
-				{props.langs.map((lang) => {
-					return <div className="tag">{lang}</div>;
+				{props.langs.map((lang, index) => {
+					return (
+						<div key={index} className="tag">
+							{lang}
+						</div>
+					);
 				})}
 			</div>
 		</div>
