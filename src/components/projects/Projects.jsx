@@ -21,7 +21,7 @@ const Projects = () => (
 				name="Snake multiplayer"
 				description="Really bad snake game that I wrote in python, in my first semester at the University. But hey, it's 60 fps."
 				img={snake}
-				langs={[ 'Python' ]}
+				langs={[ 'Python', 'pygame' ]}
 			/>
 
 			<ProjectListItem
