@@ -5,6 +5,7 @@
 	min-width: 17rem;
 	max-width: 30rem;
 	text-align: justify;
+	box-shadow: var(--shadow);
 }
 
 .skill-short {

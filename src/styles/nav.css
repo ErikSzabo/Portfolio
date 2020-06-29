@@ -3,7 +3,7 @@
 	background-color: var(--bg-primary);
 	overflow: hidden;
 	z-index: 100;
-	box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, .3);
+	box-shadow: var(--shadow);
 	transition: color 1000ms ease-out, background var(--transition-speed) ease-out, width 600ms ease;
 }
 

@@ -32,6 +32,7 @@
 	--dark-orange: #ff4800;
 	--background-third: rgb(42, 42, 48);
 	--main-bg: #1b1b1b;
+	--shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .light {

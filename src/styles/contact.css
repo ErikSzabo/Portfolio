@@ -12,7 +12,7 @@
 .contacts form {
 	padding: 2rem;
 	background-color: var(--bg-primary);
-	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .3);
+	box-shadow: var(--shadow);
 	min-width: 40%;
 	max-width: 40rem;
 	margin: auto;
@@ -32,7 +32,7 @@ textarea {
 	width: 100%;
 	border-radius: 10px;
 	margin: 1rem 0;
-	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .3);
+	box-shadow: var(--shadow);
 }
 
 .form-msg textarea {
