@@ -12,13 +12,10 @@ const Skills = () => (
 		<h1>Skills</h1>
 		<div className="skills">
 			<Skill name="JavaScript" fill="90" logo={jsLogo}>
-				<p>
-					This was my really first language that I learnt. I have really strong emotions about this language,
-					both good and bad, for reasons. I used it first with{' '}
-					<span className="text-highlight">static sites</span>, then I moved to{' '}
-					<span className="text-highlight">electron</span>, and now, here I am, using{' '}
-					<span className="text-highlight">react</span>.
-				</p>
+				This was my really first language that I learnt. I have really strong emotions about this language, both
+				good and bad, for reasons. I used it first with <span className="text-highlight">static sites</span>,
+				then I moved to <span className="text-highlight">electron</span>, and now, here I am, using{' '}
+				<span className="text-highlight">react</span>.
 			</Skill>
 
 			<Skill name="CSS" fill="60" logo={cssLogo}>
