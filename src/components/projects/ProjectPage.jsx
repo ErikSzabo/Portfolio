@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import DirWatcher from '../../content/DirWatcher';
 
+const pageMap = {
+	DirWatcher: DirWatcher,
+	'Snake multiplayer': '',
+	'This website': '',
+	'Digital Circuits Simulator': '',
+	'TicTacToe Online': ''
+};
+
 const ProjectPage = ({ match: { params: { id: name } } }) => {
 	const [ content, setContent ] = useState('');
 
 	useEffect(() => {
-		setContent(DirWatcher);
-		console.log(name);
+		setContent(pageMap[name]);
 	}, []);
 
 	return (
