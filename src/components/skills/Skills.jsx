@@ -11,7 +11,7 @@ const Skills = () => (
 	<div className="skills-container">
 		<h1>Skills</h1>
 		<div className="skills">
-			<Skill name="JavaScript" fill="80" logo={jsLogo}>
+			<Skill name="JavaScript" fill="90" logo={jsLogo}>
 				<p>
 					This was my really first language that I learnt. I have really strong emotions about this language,
 					both good and bad, for reasons. I used it first with{' '}
@@ -46,7 +46,7 @@ const Skills = () => (
 				<span className="text-highlight">branches</span>, however I haven't really done merges and rebase.
 			</Skill>
 
-			<Skill name="React" fill="40" logo={reactLogo}>
+			<Skill name="React" fill="50" logo={reactLogo}>
 				Ever since I started web development I've always wanted to try{' '}
 				<span className="text-highlight">react</span>. Now I'm really using it, and it's amazing!
 			</Skill>
