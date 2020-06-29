@@ -1,0 +1,15 @@
+.skills-container h1 {
+	text-align: center;
+}
+
+.skill-descriptions {
+	height: 60vh;
+	background-color: var(--bg-primary);
+	box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .3);
+}
+
+.skills {
+	display: inline-flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
