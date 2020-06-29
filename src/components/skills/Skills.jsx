@@ -8,7 +8,7 @@ import gitLogo from '../../images/git_logo.png';
 import reactLogo from '../../images/react_logo.png';
 
 const Skills = () => (
-	<div className="page-container skills-container">
+	<div className="skills-container">
 		<h1>Skills</h1>
 		<div className="skills">
 			<Skill name="JavaScript" fill="80" logo={jsLogo}>
