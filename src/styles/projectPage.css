@@ -1,0 +1,66 @@
+.project-page {
+	max-width: 60rem;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	font-family: 'Lato', 'sans-serif';
+	font-size: 1.3rem;
+	line-height: 2rem;
+}
+
+.project-page h1 {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.p-title {
+	font-size: 1.5rem;
+	margin: 1rem 0;
+	margin-top: 3rem;
+	color: var(--text-primary);
+	border-bottom: 1px solid var(--text-gray);
+	padding-bottom: 1rem;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.p-description {
+	text-align: justify;
+}
+
+.p-list {
+	padding-left: 20px;
+	margin: 1rem 0;
+	list-style: circle;
+}
+
+.p-list li {
+	margin: 0.3rem 0;
+}
+
+.awesome-slider {
+	margin-bottom: 5rem;
+	margin-top: 2rem;
+}
+
+.visit-btn {
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	font-weight: 900;
+	background-color: rgb(0, 119, 255);
+	display: inline-block;
+	color: black;
+	padding: 0.5rem 1rem;
+	margin-top: 0.5rem;
+	border-radius: 8px;
+	box-shadow: var(--shadow);
+	cursor: pointer;
+}
+
+.visit-btn > div,
+.fa-external-link {
+	color: rgb(219, 219, 219);
+}
+
+.visit-btn i {
+	margin-right: 5px;
+	font-weight: bold;
+}

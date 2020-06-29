@@ -4,6 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 
 @import './styles/container.css';
 @import './styles/contact.css';
@@ -14,6 +16,7 @@
 @import './styles/nav.css';
 @import './styles/themeSwitcher.css';
 @import './styles/contactPopup.css';
+@import './styles/projectPage.css';
 
 :root {
 	font-size: 16px;

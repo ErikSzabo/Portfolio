@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const colorMap = {
 	JavaScript: {
@@ -40,22 +41,24 @@ const ProjectListItem = (props) => {
 	}
 
 	return (
-		<div className="project-item">
-			<img src={props.img} alt="" />
-			<div className="project-text">
-				<h3>{props.name}</h3>
-				<p>{props.description}</p>
-				<div className="langs">
-					{props.langs.map((lang, index) => {
-						return (
-							<div key={index} className="tag" style={getStyle(lang)}>
-								{lang}
-							</div>
-						);
-					})}
+		<Link to={`/projects/${props.name}`}>
+			<div className="project-item">
+				<img src={props.img} alt="" />
+				<div className="project-text">
+					<h3>{props.name}</h3>
+					<p>{props.description}</p>
+					<div className="langs">
+						{props.langs.map((lang, index) => {
+							return (
+								<div key={index} className="tag" style={getStyle(lang)}>
+									{lang}
+								</div>
+							);
+						})}
+					</div>
 				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };
 
