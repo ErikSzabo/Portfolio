@@ -3,7 +3,7 @@ import ContactPopup from './ContactPopup';
 import ContactInput from './ContactInput';
 
 const messages = {
-	initial: 'Please fill in the form!',
+	initial: '',
 	error: 'Incorrect, please use a valid e-mail address and be sure to fill in everything!',
 	success: 'Thank you for contacting me!'
 };
