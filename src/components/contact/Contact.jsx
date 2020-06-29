@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Wave from '../Wave';
 
 const Contact = () => {
 	const [ name, setName ] = useState('');
@@ -28,47 +27,44 @@ const Contact = () => {
 	};
 
 	return (
-		<div className="contact-container">
-			<Wave />
-			<div className="page-container contacts">
-				<h1 className="contact-logo">Contact Me</h1>
-				<form onSubmit={submit}>
-					<div className="form-item form-name">
-						<input
-							required
-							placeholder="Name..."
-							type="text"
-							id="name"
-							name="name"
-							value={name}
-							onChange={(e) => setName(e.target.value)}
-						/>
-					</div>
-					<div className="form-item form-mail">
-						<input
-							required
-							type="email"
-							name="email"
-							id="email"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-							placeholder="E-mail..."
-						/>
-					</div>
-					<div className="form-item form-msg">
-						<textarea
-							required
-							type="text"
-							name="message"
-							id="message"
-							placeholder="Message..."
-							value={message}
-							onChange={(e) => setMessage(e.target.value)}
-						/>
-					</div>
-					<input type="submit" value="Send message!" />
-				</form>
-			</div>
+		<div className="page-container contacts">
+			<h1 className="contact-logo">Contact Me</h1>
+			<form onSubmit={submit}>
+				<div className="form-item form-name">
+					<input
+						required
+						placeholder="Name..."
+						type="text"
+						id="name"
+						name="name"
+						value={name}
+						onChange={(e) => setName(e.target.value)}
+					/>
+				</div>
+				<div className="form-item form-mail">
+					<input
+						required
+						type="email"
+						name="email"
+						id="email"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+						placeholder="E-mail..."
+					/>
+				</div>
+				<div className="form-item form-msg">
+					<textarea
+						required
+						type="text"
+						name="message"
+						id="message"
+						placeholder="Message..."
+						value={message}
+						onChange={(e) => setMessage(e.target.value)}
+					/>
+				</div>
+				<input type="submit" value="Send message!" />
+			</form>
 		</div>
 	);
 };
