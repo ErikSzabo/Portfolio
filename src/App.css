@@ -13,6 +13,7 @@
 @import './styles/skill.css';
 @import './styles/nav.css';
 @import './styles/themeSwitcher.css';
+@import './styles/contactPopup.css';
 
 :root {
 	font-size: 16px;

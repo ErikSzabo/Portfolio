@@ -6,7 +6,7 @@
 	text-align: center;
 	position: relative;
 	color: var(--text-primary);
-	margin-bottom: 2rem;
+	margin-bottom: .5rem;
 }
 
 .contacts form {
@@ -35,7 +35,7 @@ textarea {
 	box-shadow: var(--shadow);
 }
 
-.form-msg textarea {
+.contacts textarea {
 	height: 12rem;
 	resize: vertical;
 }

@@ -1,0 +1,11 @@
+.msg-sent-popup {
+	text-align: center;
+	min-width: 40%;
+	max-width: 40rem;
+	margin: auto;
+	margin-bottom: 1rem;
+}
+
+.msg-sent-popup > p {
+	color: var(--text-secondary);
+}
