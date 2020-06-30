@@ -16,9 +16,12 @@ const pageMap = {
 const ProjectPage = ({ match: { params: { id: name } } }) => {
 	const [ content, setContent ] = useState('');
 
-	useEffect(() => {
-		setContent(pageMap[name]);
-	}, []);
+	useEffect(
+		() => {
+			setContent(pageMap[name]);
+		},
+		[ name ]
+	);
 
 	return (
 		<div className="project-page">

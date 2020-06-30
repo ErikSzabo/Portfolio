@@ -16,7 +16,7 @@ export default (
 		</AwesomeSlider>
 
 		<ContentItem title="About the project">
-			This was my choosen homewark int the second semester at the university. I really liked building this, object
+			This was my choosen homework int the second semester at the university. I really liked building this, object
 			oriented and staticly typed languges are really amazing.
 		</ContentItem>
 	</div>
