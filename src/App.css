@@ -2,10 +2,8 @@
 ******************* GENERAL ******************
 **********************************************/
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
 @import './styles/container.css';
 @import './styles/contact.css';
@@ -20,7 +18,7 @@
 
 :root {
 	font-size: 16px;
-	font-family: 'Open Sans';
+	font-family: 'Lato', sans-serif;
 	--text-primary: #b6b6b6;
 	--text-gray: gray;
 	--text-secondary: #ececec;
@@ -46,7 +44,7 @@
 	--bg-primary: #ffffff;
 	--bg-secondary: #cccccc;
 	--background-third: #e8f0fe;
-	--main-bg: #eeeeee;
+	--main-bg: #f8f8f8;
 }
 
 * {

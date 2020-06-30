@@ -1,9 +1,8 @@
 .page-container h1 {
 	color: var(--text-primary);
 	font-size: 2rem;
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	padding-bottom: 10px;
-	/*border-bottom: 3px dashed var(--text-primary);*/
 	text-align: left;
 }
 
