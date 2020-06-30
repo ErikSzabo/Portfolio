@@ -1,6 +1,6 @@
 import React from 'react';
-import ContentItem from '../components/ContentItem';
-import VisitContent from '../components/VisitContent';
+import ContentItem from './components/ContentItem';
+import VisitContent from './components/VisitContent';
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import digit1 from '../images/circuit.png';
