@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Tag from './Tag';
 
 const ProjectListItem = ({ name, img, description, tags }) => (
-	<Link to={`/projects/${name}/`}>
+	<Link to={`/projects/${name}`}>
 		<div className="project-item">
 			<img src={img} alt="" />
 			<div className="project-text">
