@@ -14,35 +14,35 @@ const Projects = () => (
 				name="DirWatcher"
 				description="Electron app to organize and monitor folders. Lorem ipsum and other smaple text just to fill up the space"
 				img={dirwatcher}
-				langs={[ 'JavaScript', 'HTML', 'CSS' ]}
+				tags={[ 'JavaScript', 'HTML', 'CSS' ]}
 			/>
 
 			<ProjectListItem
 				name="Snake multiplayer"
 				description="Really bad snake game that I wrote in python, in my first semester at the University. But hey, it's 60 fps."
 				img={snake}
-				langs={[ 'Python', 'pygame' ]}
+				tags={[ 'Python', 'pygame' ]}
 			/>
 
 			<ProjectListItem
 				name="This website"
 				description="This is just my portfolio. The only reason why it's using React... Well, I didn't have a React project before."
 				img={portfolio}
-				langs={[ 'JavaScript', 'CSS', 'React' ]}
+				tags={[ 'JavaScript', 'CSS', 'React' ]}
 			/>
 
 			<ProjectListItem
 				name="Digital Circuits Simulator"
 				description="I chose this topic as a homework in the second semester at the University. Very basic circuit simulator."
 				img={circuit}
-				langs={[ 'Java' ]}
+				tags={[ 'Java' ]}
 			/>
 
 			<ProjectListItem
 				name="TicTacToe Online"
 				description="Client - Server based tictactoe using python sockets and pygame module."
 				img={tiktaktoe}
-				langs={[ 'Python', 'pygame', 'sockets' ]}
+				tags={[ 'Python', 'pygame', 'sockets' ]}
 			/>
 		</div>
 	</div>
