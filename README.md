@@ -20,7 +20,7 @@ from a HTML form. However, right now, the only thing that user needs to do in or
 ## Worth mentioning
 
 On the website design, https://fireship.io, had a huge influence. I really like
-how that website looks, and they had an open source navigation, which I was started to use.
+how that website looks, and they had an open source navigation, which I started to use.
 
 The theme switcher at the top right corner is coming from https://logotar.schdesign.hu/. Check them out, they make really awesome design stuff.
 
