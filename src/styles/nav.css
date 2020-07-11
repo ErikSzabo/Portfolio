@@ -1,140 +1,143 @@
+.hidden {
+	display: none;
+}
+
 .navbar {
 	position: fixed;
-	background-color: var(--bg-primary);
-	overflow: hidden;
+	top: 0;
+	right: 0;
 	z-index: 100;
-	box-shadow: var(--shadow);
-	transition: color 1000ms ease-out, background var(--transition-speed) ease-out, width 600ms ease;
 }
 
 .navbar-nav {
 	list-style: none;
+	position: relative;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	height: 100%;
+	box-shadow: var(--shadow);
+	z-index: 100;
 }
 
-.nav-item {
-	width: 100%;
-	cursor: pointer;
+.nav-links {
+	width: 300px;
+	height: 350px;
+	background: linear-gradient(to bottom right,#fb9865,#f96a1f 85%);;
+	height: 100vh;
 }
 
-.nav-link {
-	display: flex;
-	align-items: center;
-	height: 5rem;
-	color: var(--text-gray);
-	text-decoration: none;
-	transition: var(--transition-speed);
-}
-
-.nav-item > .nav-link:hover {
-	background: var(--bg-secondary);
-}
-
-.nav-item > .nav-link:hover i {
-	color: var(--highlight);
-}
-
-.nav-item > .nav-link:hover .link-text {
+.burger {
 	color: var(--text-secondary);
-}
-
-.link-text {
-	display: none;
-	margin-left: 1rem;
-}
-
-.nav-link i {
-	width: 2rem;
-	min-width: 2rem;
-	margin: 0 1.5rem;
-}
-
-.logo {
-	font-weight: bold;
-	text-transform: uppercase;
-	margin-bottom: 1rem;
-	text-align: center;
-	background: linear-gradient(var(--highlight), var(--orange2));
-	font-size: 1.5rem;
-	letter-spacing: 0.3ch;
-	width: 100%;
-}
-
-.logo i {
-	color: white;
-	transform: rotate(0deg);
-	transition: var(--transition-speed);
-	font-weight: bold;
-}
-
-.logo-text {
-	display: inline;
 	position: absolute;
-	left: -999px;
-	transition: var(--transition-speed);
-	font-size: 1.2rem;
-	color: white;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
-.navbar:hover .logo i {
-	transform: rotate(-180deg);
+.burger-line {
+	width: 40px;
+	height: 5px;
+	background-color: white;
+	border-radius: 20px;
+}
+
+.burger-line:first-child, .burger-line:nth-child(2n) {
+	margin-bottom: 5px;
+}
+
+.menu-item {
+	background: #454e56;
+	width: 70px;
+	height: 70px;
+	cursor: pointer;
+	position: relative;
+	box-shadow: var(--shadow);
+}
+
+.menu-item:first-child, .navbar-nav {
+	border-radius: 0px 0px 0px 30px;
+}
+
+.menu-item:first-child {
+	background: rgb(0, 162, 255);
+}
+
+.fa-sun-o, .fa-moon-o, .fa-terminal {
+	color: white;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.x-burger > .burger-line:first-child {
+	transform: rotate(-45deg);
+}
+
+.x-burger > .burger-line:last-child {
+	transform: rotate(45deg);
+}
+
+.x-burger > .burger-line:first-child, .x-burger > .burger-line:last-child {
+	position: absolute;
+	top: 50%;
+	left: 15px;
+}
+
+.x-burger > .burger-line:nth-child(2n) {
+	opacity: 0;
+}
+
+.nav-dropdown {
+	background: linear-gradient(45deg, rgba(0,162,255,1) 0%, rgba(24,103,198,1) 100%);
+	position: fixed;
+	z-index: 80;
+}
+
+.nav-dropdown-childs {
+	display: flex;
+	height: 100%;
+	align-items: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.dropdownitem-text {
+	color: white;
+	font-family: Montserrat;
+	font-weight: 900;
+}
+
+.dropdown-item {
+	padding: 15px;
 }
 
 /* Small screens */
 @media only screen and (max-width: 600px) {
-	.navbar {
-		bottom: 0;
-		width: 100vw;
-		height: 5rem;
+	.nav-dropdown {
+		width: 100%;
+		height: calc(100vh + 70px);
+		top: -70px;
 	}
 
-	.logo {
-		display: none;
-	}
-
-	.navbar-nav {
-		flex-direction: row;
-	}
-
-	.nav-link {
+	.nav-dropdown-childs {
+		flex-direction: column;
 		justify-content: center;
+		align-items: flex-start;
+		margin-left: 20%;
+	}
+
+	.dropdown-item {
+		font-size: 2rem;
 	}
 }
 
 /* Large screens */
 @media only screen and (min-width: 600px) {
-	.navbar {
-		top: 0;
-		width: 5rem;
-		height: 100vh;
-	}
-
-	.navbar:hover {
-		width: 16rem;
-	}
-
-	.navbar:hover .link-text {
-		display: inline;
-	}
-
-	.navbar:hover .logo i {
-		margin-left: 11rem;
-	}
-
-	.navbar:hover .logo-text {
-		left: 0px;
-	}
-}
-
-@media only screen and (orientation: landscape) and (max-height: 420px) {
-	.nav-link {
-		height: 3.5rem;
-	}
-
-	.logo .nav-link {
-		height: 4rem;
+	.nav-dropdown {
+		width: 420px;
+		height: 70px;
+		border-radius: 0px 0px 0px 30px;
+		right: 180px;
 	}
 }

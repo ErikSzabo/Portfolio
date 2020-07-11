@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const NavItem = (props) => (
+const NavItem = ({ target, name, faIcon }) => (
 	<li className="nav-item">
-		<div className="nav-link">
-			<i className={props.faIcon} aria-hidden="true" />
-			<span className="link-text">{props.name}</span>
-		</div>
+		<Link to={target}>
+			<i className={`${faIcon} link-icon`} aria-hidden="true" />
+			<span className="link-text">{name}</span>
+		</Link>
 	</li>
 );
 

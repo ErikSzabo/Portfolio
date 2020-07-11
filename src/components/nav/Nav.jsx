@@ -1,33 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import NavItem from './NavItem';
+import ThemeSwitcher from './ThemeSwitcher';
+import Dropdown from './Dropdown';
+import DropdownItem from './DropdownItem';
+import Hamburger from './Hamburger';
 
-const Nav = () => (
-	<nav className="navbar">
-		<ul className="navbar-nav">
-			<li className="logo">
-				<div className="nav-link">
-					<span className="link-text logo-text">devrik</span>
-					<i className="fa fa-angle-double-right fa-2x" aria-hidden="true" />
-				</div>
-			</li>
+const Nav = () => {
+	const [open, setOpen] = useState(false);
 
-			<Link className="nav-item" to="/">
-				<NavItem name="Home" faIcon="fa fa-home fa-2x" />
-			</Link>
+	const dropdownToggle = () => {
+		if (window.innerWidth > 600) return;
+		setOpen(!open);
+	}
 
-			<Link className="nav-item" to="/projects">
-				<NavItem name="Projects" faIcon="fa fa-code fa-2x" />
-			</Link>
+	return (
+		<div>
+			<nav className="navbar">
+				<ul className="navbar-nav">
 
-			<Link className="nav-item" to="/skills">
-				<NavItem name="Skills" faIcon="fa fa-check-square fa-2x" />
-			</Link>
-			<Link className="nav-item" to="/contact">
-				<NavItem name="Contact" faIcon="fa fa-envelope fa-2x" />
-			</Link>
-		</ul>
-	</nav>
-);
+					<li className="menu-item">
+						<Link to="/projects">
+							<i className="fa fa-terminal fa-2x" aria-hidden="true"></i>
+						</Link>
+					</li>
+
+					<li className="menu-item">
+						<ThemeSwitcher />
+					</li>
+
+					<li onClick={() => setOpen(!open)} className="menu-item">
+						<Hamburger openState={open} />
+					</li>
+
+				</ul>
+			</nav>
+
+			<Dropdown hidden={!open}>
+				<DropdownItem navToggle={dropdownToggle} name="Home" linkTo="/" />
+				<DropdownItem navToggle={dropdownToggle} name="Projects" linkTo="/projects" />
+				<DropdownItem navToggle={dropdownToggle} name="Skills" linkTo="/skills" />
+				<DropdownItem navToggle={dropdownToggle} name="Contact Me" linkTo="/contact" />
+			</Dropdown>
+		</div>
+	)
+};
 
 export default Nav;

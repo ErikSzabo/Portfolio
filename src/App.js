@@ -5,14 +5,12 @@ import Projects from './components/projects/Projects';
 import Skills from './components/skills/Skills';
 import Contact from './components/contact/Contact';
 import Landing from './components/landing/Landing';
-import ThemeSwitcher from './components/ThemeSwitcher';
 import Container from './components/Container';
 import ProjectPage from './components/projects/ProjectPage';
-import './App.css';
+import './App.scss';
 
 const App = () => (
 	<Router>
-		<ThemeSwitcher />
 		<Nav />
 		<Container>
 			<Switch>
