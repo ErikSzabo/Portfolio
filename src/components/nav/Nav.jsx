@@ -39,7 +39,7 @@ const Nav = () => {
 				<DropdownItem navToggle={dropdownToggle} name="Home" linkTo="/" />
 				<DropdownItem navToggle={dropdownToggle} name="Projects" linkTo="/projects" />
 				<DropdownItem navToggle={dropdownToggle} name="Skills" linkTo="/skills" />
-				<DropdownItem navToggle={dropdownToggle} name="Contact Me" linkTo="/contact" />
+				<DropdownItem navToggle={dropdownToggle} name="Contact" linkTo="/contact" />
 			</Dropdown>
 		</div>
 	)

@@ -90,6 +90,7 @@
 	background: linear-gradient(45deg, rgba(0,162,255,1) 0%, rgba(24,103,198,1) 100%);
 	position: fixed;
 	z-index: 80;
+	box-shadow: var(--shadow);
 }
 
 .nav-dropdown-childs {
@@ -104,7 +105,7 @@
 
 .dropdownitem-text {
 	color: white;
-	font-family: Montserrat;
+	font-family: Montserrat, "sans-serif";
 	font-weight: 900;
 }
 
@@ -139,5 +140,9 @@
 		height: 70px;
 		border-radius: 0px 0px 0px 30px;
 		right: 180px;
+	}
+
+	.dropdown-item:first-child {
+		margin-left: 15px;
 	}
 }
