@@ -1,6 +1,7 @@
 .project-item {
 	background-color: var(--bg-primary);
 	border-radius: 10px;
+	overflow: hidden;
 	cursor: pointer;
 	transform: scale(1);
 	box-shadow: var(--shadow);

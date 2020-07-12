@@ -11,9 +11,9 @@ import FilterTag from './FilterTag';
 const projects = [
 	{
 		name: 'DirWatcher',
-		description: 'Electron app to organize and monitor folders. Lorem ipsum and other smaple text just to fill up the space',
+		description: 'Electron app to organize and monitor folders. Uses LitElement inside Electron.',
 		img: dirwatcher,
-		tags: ['JavaScript', 'HTML', 'CSS'],
+		tags: ['JavaScript', 'CSS', 'Electron'],
 		filterTags: ['javascript']
 	},
 	{
@@ -69,7 +69,7 @@ const Projects = () => {
 				<h1>My Projects</h1>
 				<p>
 					These are all of my own projects. I'm an unversity student, so the projects may vary.
-					I mostly work with the frontend and javasscript, although I learnt python and java at the
+					I mostly work with the frontend and javascript, although I learnt python and java at the
 					university as well.
 				</p>
 				<div className="filter-tags">
