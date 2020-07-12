@@ -8,19 +8,19 @@ import TicTacToe from '../../content/TicTacToe';
 const pageMap = {
 	DirWatcher: DirWatcher,
 	'Snake multiplayer': SnakeMultiplayer,
-	'This website': DevrikNet,
+	'This portfolio': DevrikNet,
 	'Digital Circuits Simulator': DigitalCircuits,
 	'TicTacToe Online': TicTacToe
 };
 
 const ProjectPage = ({ match: { params: { id: name } } }) => {
-	const [ content, setContent ] = useState('');
+	const [content, setContent] = useState('');
 
 	useEffect(
 		() => {
 			setContent(pageMap[name]);
 		},
-		[ name ]
+		[name]
 	);
 
 	return (
