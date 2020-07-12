@@ -79,6 +79,8 @@ const Projects = () => {
 					<FilterTag name="JAVASCRIPT" filter={filters.javascript} setter={setFilter} />
 					<FilterTag name="PYTHON" filter={filters.python} setter={setFilter} />
 				</div>
+				<br />
+				<p className="filter-text">Feel free to use these filters above!</p>
 			</div>
 
 			<div className="projects-wrapper">
