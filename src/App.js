@@ -7,7 +7,7 @@ import Contact from './components/contact/Contact';
 import Landing from './components/landing/Landing';
 import Container from './components/Container';
 import ProjectPage from './components/projects/ProjectPage';
-import './App.scss';
+import './App.css';
 
 const App = () => (
 	<Router>
