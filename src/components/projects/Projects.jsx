@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Project from './Project';
-import dirwatcher from '../../images/dirwatcher.png';
-import snake from '../../images/snake.png';
-import portfolio from '../../images/portfolio.png';
-import circuit from '../../images/circuit.png';
-import tiktaktoe from '../../images/tiktaktoe.png';
+import dirwatcher from '../../images/dirwatcher.jpg';
+import snake from '../../images/snake.jpg';
+import portfolio from '../../images/portfolio.jpg';
+import circuit from '../../images/circuit.jpg';
+import tiktaktoe from '../../images/tiktaktoe.jpg';
 import FilterTag from './FilterTag';
 
 // Fake API data 😢
