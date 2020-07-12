@@ -21,7 +21,7 @@ from a HTML form. However, right now, the only thing that user needs to do in or
 
 On the website design, https://fireship.io, had a huge influence. I really like how that website looks.
 
-@depreacted <br>
+@deprecated <br>
 The theme switcher at the top right corner is coming from https://logotar.schdesign.hu/. Check them out, they make really awesome design stuff.
 
 I only used these resources, beacuse this site mainly aims to show off what can I do with React right now, and not my CSS skills.
