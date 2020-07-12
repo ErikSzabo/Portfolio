@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Tag from './Tag';
 
-const ProjectListItem = ({ name, img, description, tags }) => (
+const Project = ({ name, img, description, tags }) => (
 	<Link to={`/projects/${name}`}>
 		<div className="project-item">
 			<img src={img} alt="" />
@@ -19,4 +19,4 @@ const ProjectListItem = ({ name, img, description, tags }) => (
 	</Link>
 );
 
-export default ProjectListItem;
+export default Project;

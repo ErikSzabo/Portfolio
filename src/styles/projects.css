@@ -8,6 +8,16 @@
 	grid-gap: 50px;
 }
 
+.projects-header {
+	max-width: 800px;
+}
+
+.filter-tags {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
 /* Small screens */
 @media only screen and (max-width: 600px) {
 	.projects-wrapper {

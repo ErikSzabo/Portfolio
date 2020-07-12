@@ -31,15 +31,3 @@
 	display: flex;
 	flex-wrap: wrap;
 }
-
-.tag {
-	margin-top: 1rem;
-	margin-right: 5px;
-	padding: 0.4rem;
-	background-color: var(--background-third);
-	color: var(--text-secondary);
-	font-size: .8rem;
-	font-weight: bold;
-	border-radius: 6px;
-	margin-right: 0.5rem;
-}
