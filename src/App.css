@@ -7,12 +7,13 @@
 
 @import './styles/container.css';
 @import './styles/contact.css';
+@import './styles/formGroup.css';
+@import './styles/formButtons.css';
 @import './styles/skills.css';
 @import './styles/projects.css';
 @import './styles/project.css';
 @import './styles/skill.css';
 @import './styles/nav.css';
-@import './styles/contactPopup.css';
 @import './styles/projectPage.css';
 @import './styles/tags.css';
 

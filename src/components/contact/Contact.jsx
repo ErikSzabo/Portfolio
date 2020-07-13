@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import ContactPopup from './ContactPopup';
-import ContactInput from './ContactInput';
+import FormGroup from './FormGroup';
+import FormButtons from './FormButtons';
 
-const messages = {
-	initial: '',
-	error: 'Incorrect, please use a valid e-mail address and be sure to fill in everything!',
-	success: 'Thank you for contacting me!'
-};
 
 const Contact = () => {
-	const [ name, setName ] = useState('');
-	const [ email, setEmail ] = useState('');
-	const [ message, setMessage ] = useState('');
-	const [ popupMessage, setPopupMessage ] = useState(messages.initial);
+	const [name, setName] = useState('');
+	const [email, setEmail] = useState('');
+	const [message, setMessage] = useState('');
+	const [response, setResponse] = useState({
+		valid: false,
+		submitted: false
+	});
 
 	const validateInput = () => {
 		return /\S+@\S+\.\S+/.test(email) && name.trim() && message.trim();
@@ -29,9 +27,10 @@ const Contact = () => {
 
 	const submit = (e) => {
 		e.preventDefault();
+		setResponse((prev) => { return { ...prev, submitted: true } })
 
 		if (!validateInput()) {
-			setPopupMessage(messages.error);
+			setResponse((prev) => { return { ...prev, valid: false } })
 			return;
 		}
 
@@ -46,19 +45,55 @@ const Contact = () => {
 		setName('');
 		setMessage('');
 		setEmail('');
-		setPopupMessage(messages.success);
+		setResponse((prev) => { return { ...prev, valid: true } })
 	};
 
 	return (
 		<div className="contacts">
-			<h1 className="contact-logo">Contact Me</h1>
-			<ContactPopup message={popupMessage} />
-			<form onSubmit={submit}>
-				<ContactInput setter={setName} value={name} type="text" placeholder="Name..." />
-				<ContactInput setter={setEmail} value={email} type="email" placeholder="E-mail..." />
-				<ContactInput setter={setMessage} value={message} type="textarea" placeholder="Message..." />
-				<input type="submit" value="Send message!" />
+			<h1>Contact Me!</h1>
+			<p>
+				If you are intrested, fill in the form, send me a mail
+				and I will answer you as soon as possible! If you don't
+				like forms, you can send me an e-mail to {'  '}
+				<span className="text-highlight">
+					erik1szabo1@gmail.com
+				</span>. I'm mainly intrested in frontend and "JavaScript"
+				development.
+			</p>
+			<form className="contact-form" onSubmit={submit}>
+				<FormGroup
+					name="name"
+					iconClass="fa fa-user fa-2x"
+					placeholder="Name"
+					type="text"
+					isTextArea={false}
+					setter={setName}
+				/>
+				<FormGroup
+					name="email"
+					placeholder="E-mail"
+					iconClass="fa fa-envelope fa-2x"
+					type="email"
+					isTextArea={false}
+					setter={setEmail}
+				/>
+				<FormGroup
+					name="message"
+					placeholder="Message"
+					iconClass="fa fa-sticky-note fa-2x"
+					isTextArea={true}
+					setter={setMessage}
+				/>
+				<FormButtons submit={submit} />
 			</form>
+
+			{response.valid && response.submitted ? (
+				<p>Your message was sent!</p>
+			) :
+				!response.valid && response.submitted ? (
+					<p>Please fill in the form correctly!</p>) :
+					''
+			}
 		</div>
 	);
 };
