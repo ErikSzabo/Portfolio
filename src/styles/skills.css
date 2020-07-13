@@ -9,7 +9,8 @@
 }
 
 .skills {
-	display: inline-flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(17rem, 30rem));
+	gap: 1.5rem;
 	justify-content: center;
 }
