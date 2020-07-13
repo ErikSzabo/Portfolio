@@ -34,7 +34,7 @@ const projects = [
 		name: 'Digital Circuits Simulator',
 		description: 'I chose this topic as a homework in the second semester at the University. Very basic circuit simulator.',
 		img: circuit,
-		tags: ['Java'],
+		tags: ['Java', 'OOP'],
 		filterTags: []
 	},
 	{
