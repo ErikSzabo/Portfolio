@@ -33,6 +33,7 @@
 	height: 5px;
 	background-color: white;
 	border-radius: 20px;
+	transition: 300ms all ease-in-out;
 }
 
 .burger-line:first-child, .burger-line:nth-child(2n) {
@@ -72,7 +73,7 @@
 	transform: rotate(45deg);
 }
 
-.x-burger > .burger-line:first-child, .x-burger > .burger-line:last-child {
+.x-burger > .burger-line {
 	position: absolute;
 	top: 50%;
 	left: 15px;
@@ -140,6 +141,7 @@
 		border-radius: 0px 0px 0px 30px;
 		right: 180px;
 		transition: right 500ms ease-in-out;
+		top: -1px;
 	}
 
 	.dropdown-item:first-child {
@@ -147,6 +149,6 @@
 	}
 
 	.hidden {
-		right: -400px;
+		right: -210px;
 	}
 }
