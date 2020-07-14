@@ -98,9 +98,14 @@
 
 
 .dropdownitem-text {
-	color: white;
-	font-family: Montserrat, "sans-serif";
+	color: rgb(230, 230, 230);
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 900;
+	transition: color 200ms ease-in-out;
+}
+
+.dropdownitem-text:hover {
+	color: white;
 }
 
 .dropdown-item {
@@ -113,6 +118,7 @@
 		width: 100%;
 		height: calc(100vh + 70px);
 		top: -70px;
+		right: 0;
 		overflow: hidden;
 		transition: all 500ms ease-in-out;
 	}
@@ -129,6 +135,7 @@
 	}
 
 	.hidden {
+		right: -100%;
 		top: calc(-100vh - 70px);
 	}
 }
