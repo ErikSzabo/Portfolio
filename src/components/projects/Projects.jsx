@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Project from './Project';
+import FilterTag from './FilterTag';
+
 import dirwatcher from '../../images/dirwatcher.jpg';
 import snake from '../../images/snake.jpg';
 import portfolio from '../../images/portfolio.jpg';
 import circuit from '../../images/circuit.jpg';
 import tiktaktoe from '../../images/tiktaktoe.jpg';
-import FilterTag from './FilterTag';
 
 // Fake API data 😢
 const projects = [
@@ -46,22 +47,24 @@ const projects = [
 	}
 ]
 
-const Projects = () => {
-	const filters = {
-		none: '',
-		frontend: 'frontend',
-		backend: 'backend',
-		javascript: 'javascript',
-		python: 'python'
-	}
+const filters = {
+	none: '',
+	frontend: 'frontend',
+	backend: 'backend',
+	javascript: 'javascript',
+	python: 'python'
+}
 
+const Projects = () => {
 	const [filter, setFilter] = useState(filters.none);
 
-	const filterProjects = (filterType) => {
-		if (!(filterType in filters)) return projects;
-		if (filterType === filters.none) return projects;
-		return projects.filter(p => p.filterTags.includes(filterType));
-	}
+	const filterProjects = useCallback(
+		() => {
+			if (filter === filters.none) return projects;
+			return projects.filter(p => p.filterTags.includes(filter));
+		},
+		[filter],
+	)
 
 	return (
 		<div className="projects">
@@ -84,7 +87,7 @@ const Projects = () => {
 			</div>
 
 			<div className="projects-wrapper">
-				{filterProjects(filter).map(p => <Project key={p.name} name={p.name} description={p.description} img={p.img} tags={p.tags} />)}
+				{filterProjects().map(p => <Project key={p.name} name={p.name} description={p.description} img={p.img} tags={p.tags} />)}
 			</div>
 		</div>
 	);
