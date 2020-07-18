@@ -59,19 +59,23 @@ const parseContent = (content) => {
 const ProjectPage = ({ match }) => {
     const id = match.params.id;
     const [content, setContent] = useState(null);
-    const [error, setError] = useState(true);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         (async () => {
             const project = await getPorject(id);
             setContent(project);
-            if (!project.error) setError(false);
+            if (project.error) setError(true);
+            setLoading(false);
         })();
     }, [id]);
 
     return (
         <div className="project-page">
-            {error
+            {loading
+                ? null
+                : error
                 ? "There isn't any project with this id!"
                 : parseContent(content)}
         </div>
