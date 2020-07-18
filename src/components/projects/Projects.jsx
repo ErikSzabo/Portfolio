@@ -1,96 +1,70 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useContext, useMemo } from 'react';
+import { ApplicationContext } from '../Container';
 import Project from './Project';
 import FilterTag from './FilterTag';
 
-import dirwatcher from '../../images/dirwatcher.jpg';
-import snake from '../../images/snake.jpg';
-import portfolio from '../../images/portfolio.jpg';
-import circuit from '../../images/circuit.jpg';
-import tiktaktoe from '../../images/tiktaktoe.jpg';
-
-// Fake API data 😢
-const projects = [
-	{
-		name: 'DirWatcher',
-		description: 'Electron app to organize and monitor folders. Uses LitElement inside Electron.',
-		img: dirwatcher,
-		tags: ['JavaScript', 'CSS', 'Electron'],
-		filterTags: ['javascript']
-	},
-	{
-		name: 'Snake multiplayer',
-		description: 'Really bad snake game that I wrote in python, in my first semester at the University. But hey, it\'s 60 fps.',
-		img: snake,
-		tags: ['Python', 'pygame'],
-		filterTags: ['python']
-	},
-	{
-		name: 'This portfolio',
-		description: 'This is just my portfolio. The only reason why it\'s using React...Well, I didn\'t have a React project before.',
-		img: portfolio,
-		tags: ['JavaScript', 'CSS', 'React'],
-		filterTags: ['frontend', 'javascript']
-	},
-	{
-		name: 'Digital Circuits Simulator',
-		description: 'I chose this topic as a homework in the second semester at the University. Very basic circuit simulator.',
-		img: circuit,
-		tags: ['Java', 'OOP'],
-		filterTags: []
-	},
-	{
-		name: 'TicTacToe Online',
-		description: 'Client - Server based tictactoe using python sockets and pygame module.',
-		img: tiktaktoe,
-		tags: ['Python', 'pygame', 'sockets'],
-		filterTags: ['python']
-	}
-]
-
 const filters = {
-	none: '',
-	frontend: 'frontend',
-	backend: 'backend',
-	javascript: 'javascript',
-	python: 'python'
-}
+    none: 'ALL',
+    frontend: 'FRONTEND',
+    backend: 'BACKEND',
+    javascript: 'JAVASCRIPT',
+    python: 'PYTHON',
+};
 
 const Projects = () => {
-	const [filter, setFilter] = useState(filters.none);
+    const [filter, setFilter] = useState(filters.none);
+    const { projects, loading } = useContext(ApplicationContext);
 
-	const filterProjects = useCallback(
-		() => {
-			if (filter === filters.none) return projects;
-			return projects.filter(p => p.filterTags.includes(filter));
-		},
-		[filter],
-	)
+    const filterProjects = () => {
+        if (filter === filters.none) return projects;
+        return projects.filter((p) =>
+            p.filterTags.includes(filter.toLowerCase())
+        );
+    };
 
-	return (
-		<div className="projects">
-			<div className="projects-header">
-				<h1>My Projects</h1>
-				<p>
-					These are all of my own projects. I'm an unversity student, so the projects may vary.
-					I mostly work with the frontend and javascript, although I learnt python and java at the
-					university as well.
-				</p>
-				<div className="filter-tags">
-					<FilterTag name="ALL" filter={filters.none} setter={setFilter} />
-					<FilterTag name="FRONTEND" filter={filters.frontend} setter={setFilter} />
-					<FilterTag name="BACKEND" filter={filters.backend} setter={setFilter} />
-					<FilterTag name="JAVASCRIPT" filter={filters.javascript} setter={setFilter} />
-					<FilterTag name="PYTHON" filter={filters.python} setter={setFilter} />
-				</div>
-				<br />
-				<p className="filter-text">Feel free to use these filters above!</p>
-			</div>
+    const filterTags = useMemo(() => {
+        return Array.from(Object.keys(filters)).map((key) => (
+            <FilterTag
+                key={key}
+                name={filters[key]}
+                filter={filters[key]}
+                setter={setFilter}
+            />
+        ));
+    }, [setFilter]);
 
-			<div className="projects-wrapper">
-				{filterProjects().map(p => <Project key={p.name} name={p.name} description={p.description} img={p.img} tags={p.tags} />)}
-			</div>
-		</div>
-	);
-}
+    return (
+        <div className="projects">
+            <div className="projects-header">
+                <h1>My Projects</h1>
+                <p>
+                    These are all of my own projects. I'm an unversity student,
+                    so the projects may vary. I mostly work with the frontend
+                    and javascript, although I learnt python and java at the
+                    university as well.
+                </p>
+                <div className="filter-tags">{filterTags}</div>
+                <br />
+                <p className="filter-text">
+                    Feel free to use these filters above!
+                </p>
+            </div>
+
+            <div className="projects-wrapper">
+                {!loading &&
+                    filterProjects().map((p) => (
+                        <Project
+                            key={p._id}
+                            id={p._id}
+                            name={p.name}
+                            description={p.description}
+                            img={p.img}
+                            tags={p.tags}
+                        />
+                    ))}
+            </div>
+        </div>
+    );
+};
 
 export default Projects;

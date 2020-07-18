@@ -1,34 +1,81 @@
 import React, { useState, useEffect } from 'react';
-import DirWatcher from '../../content/DirWatcher';
-import SnakeMultiplayer from '../../content/SnakeMultiplayer';
-import DevrikNet from '../../content/DevrikNet';
-import DigitalCircuits from '../../content/DigitalCircuits';
-import TicTacToe from '../../content/TicTacToe';
+import AwesomeSlider from 'react-awesome-slider';
+import ContentItem from './ContentItem';
+import VisitContent from './VisitContent';
+import 'react-awesome-slider/dist/styles.css';
 
-const pageMap = {
-	DirWatcher: DirWatcher,
-	'Snake multiplayer': SnakeMultiplayer,
-	'This portfolio': DevrikNet,
-	'Digital Circuits Simulator': DigitalCircuits,
-	'TicTacToe Online': TicTacToe
+// content
+// - name: string
+// - description: string
+// - githubUrl: string
+// - images: string[] (actually url strings)
+// - elements: element[]
+
+// element
+// - title: string
+// - content: string
+// - contentType: "list" | "text"
+// - listItems?: string[]
+
+const getPorject = async (id) => {
+    const raw = await fetch(
+        `https://devrik-net.herokuapp.com/api/v1/projects/${id}`
+    );
+    const result = await raw.json();
+    return result;
 };
 
-const ProjectPage = ({ match: { params: { id: name } } }) => {
-	const [content, setContent] = useState('');
+const parseContent = (content) => {
+    if (!content) return null;
+    return (
+        <div>
+            <h1>{content.name}</h1>
+            <p className="p-description">{content.description}</p>
 
-	useEffect(
-		() => {
-			setContent(pageMap[name]);
-		},
-		[name]
-	);
+            <VisitContent url={content.githubUrl} />
 
-	return (
-		<div className="project-page">
-			<h1>{name}</h1>
-			{content}
-		</div>
-	);
+            <AwesomeSlider className="awesome-slider">
+                {content.images.map((url) => (
+                    <div key={url} data-src={url} />
+                ))}
+            </AwesomeSlider>
+
+            {content.elements.map((element, index) => (
+                <ContentItem key={index} title={element.title}>
+                    {element.content}
+                    {element.contentType === 'list' && (
+                        <ul className="p-list">
+                            {element.listItems.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
+                        </ul>
+                    )}
+                </ContentItem>
+            ))}
+        </div>
+    );
+};
+
+const ProjectPage = ({ match }) => {
+    const id = match.params.id;
+    const [content, setContent] = useState(null);
+    const [error, setError] = useState(true);
+
+    useEffect(() => {
+        (async () => {
+            const project = await getPorject(id);
+            setContent(project);
+            if (!project.error) setError(false);
+        })();
+    }, [id]);
+
+    return (
+        <div className="project-page">
+            {error
+                ? "There isn't any project with this id!"
+                : parseContent(content)}
+        </div>
+    );
 };
 
 export default ProjectPage;
