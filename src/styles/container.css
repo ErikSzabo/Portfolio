@@ -1,25 +1,26 @@
 .page-container h1 {
-	color: var(--text-primary);
-	font-size: 2rem;
-	font-family: 'Montserrat', sans-serif;
-	padding-bottom: 10px;
-	text-align: left;
+    color: var(--text-primary);
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 10px;
+    text-align: left;
 }
 
 .page-container {
-	margin: auto;
+    margin: auto;
+    overflow: hidden;
 }
 
 /* Small screens */
 @media only screen and (max-width: 600px) {
-	.page-container {
-		padding: 100px 1.2rem;
-	}
+    .page-container {
+        padding: 100px 1.2rem;
+    }
 }
 
 /* Large screens */
 @media only screen and (min-width: 600px) {
-	.page-container {
-		padding: 100px;
-	}
+    .page-container {
+        padding: 100px;
+    }
 }

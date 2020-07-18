@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import AwesomeSlider from 'react-awesome-slider';
 import ContentItem from './ContentItem';
 import VisitContent from './VisitContent';
@@ -82,4 +83,4 @@ const ProjectPage = ({ match }) => {
     );
 };
 
-export default ProjectPage;
+export default withRouter(ProjectPage);
