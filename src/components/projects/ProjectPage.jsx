@@ -19,9 +19,7 @@ import 'react-awesome-slider/dist/styles.css';
 // - listItems?: string[]
 
 const getPorject = async (id) => {
-    const raw = await fetch(
-        `https://devrik-net.herokuapp.com/api/v1/projects/${id}`
-    );
+    const raw = await fetch(`https://api.devrik.net/project-page/${id}`);
     const result = await raw.json();
     return result;
 };

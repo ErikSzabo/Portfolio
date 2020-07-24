@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react';
 export const ApplicationContext = React.createContext(null);
 
 const getProjects = async () => {
-    const raw = await fetch('https://devrik-net.herokuapp.com/api/v1/projects');
+    const raw = await fetch('https://api.devrik.net/projects');
     return await raw.json();
 };
 
 const getSkills = async () => {
-    const raw = await fetch('https://devrik-net.herokuapp.com/api/v1/skills');
+    const raw = await fetch('https://api.devrik.net/skills');
     return await raw.json();
 };
 
