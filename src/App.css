@@ -18,60 +18,65 @@
 @import './styles/tags.css';
 
 :root {
-	font-size: 16px;
-	font-family: 'Lato', sans-serif;
-	--text-primary: #b6b6b6;
-	--text-gray: gray;
-	--text-secondary: #ececec;
-	--bg-primary: #242429;
-	--bg-secondary: #1d1d1f;
-	--transition-speed: 600ms;
-	--highlight: #ff8500;
-	--background-third: rgb(42, 42, 48);
-	--main-bg: #1b1b1b;
-	--shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    --text-primary: #b6b6b6;
+    --text-gray: gray;
+    --text-secondary: #ececec;
+    --bg-primary: #242429;
+    --bg-secondary: #1d1d1f;
+    --transition-speed: 600ms;
+    --highlight: #ff8500;
+    --background-third: rgb(42, 42, 48);
+    --main-bg: #1b1b1b;
+    --shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .light {
-	--text-primary: #3f3f3f;
-	--text-gray: gray;
-	--text-secondary: #202020;
-	--bg-primary: #ffffff;
-	--bg-secondary: #cccccc;
-	--background-third: #e8f0fe;
-	--main-bg: #f8f8f8;
+    --text-primary: #3f3f3f;
+    --text-gray: gray;
+    --text-secondary: #202020;
+    --bg-primary: #ffffff;
+    --bg-secondary: #cccccc;
+    --background-third: #e8f0fe;
+    --main-bg: #f8f8f8;
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	color: gray;
-	transition: color 1000ms ease-out, background var(--transition-speed) ease-out;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: gray;
+    transition: color 1000ms ease-out,
+        background var(--transition-speed) ease-out;
 }
 
 body {
-	background-color: var(--main-bg);
+    background-color: var(--main-bg);
 }
 
 ::-webkit-scrollbar {
-	width: 0.25rem;
+    width: 0.25rem;
 }
 
 ::-webkit-scrollbar-track {
-	background: #24201e;
+    background: #24201e;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: gray;
+    background: gray;
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .text-highlight {
-	background-color: var(--background-third);
-	color: var(--highlight);
-	padding: 3px;
+    background-color: var(--background-third);
+    color: var(--highlight);
+    padding: 3px;
+}
+
+.hidden {
+    display: none;
 }
