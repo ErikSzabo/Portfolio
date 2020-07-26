@@ -1,5 +1,4 @@
-import React, { useState, useContext, useMemo } from 'react';
-import { ApplicationContext } from '../Container';
+import React, { useState, useEffect, useMemo } from 'react';
 import Project from './Project';
 import FilterTag from './FilterTag';
 
@@ -13,7 +12,13 @@ const filters = {
 
 const Projects = () => {
     const [filter, setFilter] = useState(filters.none);
-    const { projects, loading } = useContext(ApplicationContext);
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        fetch('https://api.devrik.net/projects')
+            .then((result) => result.json())
+            .then((projects) => setProjects(projects));
+    }, []);
 
     const filterProjects = () => {
         if (filter === filters.none) return projects;
@@ -51,17 +56,16 @@ const Projects = () => {
             </div>
 
             <div className="projects-wrapper">
-                {!loading &&
-                    filterProjects().map((p) => (
-                        <Project
-                            key={p._id}
-                            id={p._id}
-                            name={p.name}
-                            description={p.description}
-                            img={p.img}
-                            tags={p.tags}
-                        />
-                    ))}
+                {filterProjects().map((p) => (
+                    <Project
+                        key={p._id}
+                        id={p._id}
+                        name={p.name}
+                        description={p.description}
+                        img={p.img}
+                        tags={p.tags}
+                    />
+                ))}
             </div>
         </div>
     );

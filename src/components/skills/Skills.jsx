@@ -1,24 +1,28 @@
-import React, { useContext } from 'react';
-import { ApplicationContext } from '../Container';
+import React, { useState, useEffect } from 'react';
 import Skill from './Skill';
 
 const Skills = () => {
-    const { skills, loading } = useContext(ApplicationContext);
+    const [skills, setSkills] = useState([]);
+
+    useEffect(() => {
+        fetch('https://api.devrik.net/skills')
+            .then((result) => result.json())
+            .then((skills) => setSkills(skills));
+    }, []);
 
     return (
         <div className="skills-container">
             <h1>Skills</h1>
             <div className="skills">
-                {!loading &&
-                    skills.map((skill, index) => (
-                        <Skill
-                            key={index}
-                            name={skill.name}
-                            fill={skill.progress}
-                            description={skill.description}
-                            logo={skill.icon}
-                        />
-                    ))}
+                {skills.map((skill, index) => (
+                    <Skill
+                        key={index}
+                        name={skill.name}
+                        fill={skill.progress}
+                        description={skill.description}
+                        logo={skill.icon}
+                    />
+                ))}
             </div>
         </div>
     );
