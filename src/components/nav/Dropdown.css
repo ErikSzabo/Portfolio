@@ -1,9 +1,10 @@
 .nav-dropdown {
-    background: linear-gradient(
+    /*background: linear-gradient(
         45deg,
         rgba(0, 162, 255, 1) 0%,
         rgba(24, 103, 198, 1) 100%
-    );
+    );*/
+    background-color: var(--background1);
     position: fixed;
     z-index: 80;
     box-shadow: var(--shadow);

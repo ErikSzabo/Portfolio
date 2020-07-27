@@ -1,12 +1,12 @@
 .dropdownitem-text {
-    color: rgb(230, 230, 230);
+    color: var(--text2);
     font-family: var(--montserrat);
     font-weight: 900;
     transition: color 200ms ease-in-out;
 }
 
 .dropdownitem-text:hover {
-    color: white;
+    color: var(--text3);
 }
 
 .dropdown-item {

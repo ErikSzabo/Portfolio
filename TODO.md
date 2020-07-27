@@ -10,7 +10,7 @@
     -   I just don't like them right now.
 -   [x] **#G4** Make CSS individual for component abstraction and reusability
     -   At so many places components only looks normal, because of outer components' flexbox or some crap.
--   [ ] **#G5** Opened navigation colors should match the theme pattern
+-   [x] **#G5** Opened navigation colors should match the theme pattern
 -   [x] **#G6** CSS varibale names are kinda shit, rename them
 -   [x] **#G7** Make modules and put the components inside the modules with their CSS
 -   [ ] **#G8** Make sure that there isn't any more CSS conflict
