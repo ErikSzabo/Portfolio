@@ -5,6 +5,7 @@
     cursor: pointer;
     transform: scale(1);
     box-shadow: var(--shadow);
+    max-width: 500px;
     transition: color 1000ms ease-out,
         background var(--transition-speed) ease-out, transform 300ms ease-out;
 }
@@ -31,5 +32,7 @@
 
 .project-tags {
     display: flex;
+    gap: 0.5rem;
     flex-wrap: wrap;
+    margin-top: 1rem;
 }

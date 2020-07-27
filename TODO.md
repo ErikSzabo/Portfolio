@@ -8,7 +8,7 @@
     -   Either wait the images to load and then display the whole page, or make it somehow faster to load.
 -   [x] **#G3** Adjust light theme
     -   I just don't like them right now.
--   [ ] **#G4** Make CSS individual for component abstraction and reusability
+-   [x] **#G4** Make CSS individual for component abstraction and reusability
     -   At so many places components only looks normal, because of outer components' flexbox or some crap.
 -   [ ] **#G5** Opened navigation colors should match the theme pattern
 -   [x] **#G6** CSS varibale names are kinda shit, rename them
@@ -17,7 +17,6 @@
     -   Like overrides and important keyword.
     -   [x] **G8.1** Known: App.css hidden class overrides nav hidden class, and this prevents nav animation
 -   [ ] **#G9** Make a fantastic frontpage :|
--   [ ] **#G10** Some call to action buttons somewhere?
 
 # Admin
 
