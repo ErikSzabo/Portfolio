@@ -8,26 +8,32 @@
 :root {
     font-size: 16px;
     font-family: 'Lato', sans-serif;
-    --text-primary: #b6b6b6;
-    --text-gray: gray;
-    --text-secondary: #ececec;
-    --bg-primary: #242429;
-    --bg-secondary: #1d1d1f;
+    --lato: 'Lato', sans-serif;
+    --montserrat: 'Montserrat', sans-serif;
+    --text1: #b6b6b6;
+    --text2: gray;
+    --text3: #ececec;
+    --background: #1b1b1b;
+    --background1: #242429;
+    --background2: #1d1d1f;
+    --background3: rgb(42, 42, 48);
     --transition-speed: 600ms;
     --highlight: #ff8500;
-    --background-third: rgb(42, 42, 48);
-    --main-bg: #1b1b1b;
     --shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+    --tag-background: #454e56;
+    --tag-foreground: #b2becd;
 }
 
 .light {
-    --text-primary: #3f3f3f;
-    --text-gray: gray;
-    --text-secondary: #202020;
-    --bg-primary: #ffffff;
-    --bg-secondary: #cccccc;
-    --background-third: #e8f0fe;
-    --main-bg: #f8f8f8;
+    --text1: #3f3f3f;
+    --text2: gray;
+    --text3: #202020;
+    --background: #f8f8f8;
+    --background1: #ffffff;
+    --background2: #cccccc;
+    --background3: #e8f0fe;
+    --tag-background: #b2becd;
+    --tag-foreground: #454e56;
 }
 
 * {
@@ -40,7 +46,7 @@
 }
 
 body {
-    background-color: var(--main-bg);
+    background-color: var(--background);
 }
 
 ::-webkit-scrollbar {
@@ -60,7 +66,7 @@ a {
 }
 
 .text-highlight {
-    background-color: var(--background-third);
+    background-color: var(--background3);
     color: var(--highlight);
     padding: 3px;
 }

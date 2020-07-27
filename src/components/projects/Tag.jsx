@@ -1,5 +1,5 @@
 import React from 'react';
-import './Tags.css';
+import './Tag.css';
 
 const colorMap = {
     javascript: {
@@ -11,12 +11,12 @@ const colorMap = {
         front: '#313244',
     },
     python: {
-        background: '#3879AB',
-        front: '#FFDA5D',
+        background: '#498AFB',
+        front: '#e8f0fe',
     },
     java: {
-        background: '#E76F00',
-        front: '#242429',
+        background: '#FFCB2B',
+        front: '#12181A',
     },
     react: {
         background: '#222222',
@@ -27,8 +27,8 @@ const colorMap = {
         front: '#FFFFFF',
     },
     default: {
-        background: '#454E56',
-        front: '#B2BECD',
+        background: 'var(--tag-background)',
+        front: 'var(--tag-foreground)',
     },
 };
 

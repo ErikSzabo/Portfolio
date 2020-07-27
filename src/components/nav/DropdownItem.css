@@ -1,6 +1,6 @@
 .dropdownitem-text {
     color: rgb(230, 230, 230);
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--montserrat);
     font-weight: 900;
     transition: color 200ms ease-in-out;
 }

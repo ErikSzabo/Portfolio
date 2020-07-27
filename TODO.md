@@ -6,12 +6,12 @@
 -   [x] **#G2** Load images faster
     -   images for projects and skills will only be requested when the page renders, and this adds a little delay to them to load and this is really annoying.
     -   Either wait the images to load and then display the whole page, or make it somehow faster to load.
--   [ ] **#G3** Adjust light theme whites
+-   [x] **#G3** Adjust light theme
     -   I just don't like them right now.
 -   [ ] **#G4** Make CSS individual for component abstraction and reusability
     -   At so many places components only looks normal, because of outer components' flexbox or some crap.
 -   [ ] **#G5** Opened navigation colors should match the theme pattern
--   [ ] **#G6** CSS varibale names are kinda shit, rename them
+-   [x] **#G6** CSS varibale names are kinda shit, rename them
 -   [x] **#G7** Make modules and put the components inside the modules with their CSS
 -   [ ] **#G8** Make sure that there isn't any more CSS conflict
     -   Like overrides and important keyword.

@@ -1,42 +1,44 @@
 .form-group {
-	position: relative;
+    position: relative;
 }
 
 .form-group > label {
-	position: absolute;
+    position: absolute;
     top: 50%;
     left: 10px;
-	transform: translateY(-50%);
-	display: block;
-	padding: 0.3rem;
-	width: 40px;
-	color: var(--text-primary);
-	text-align: center;
-	font-family: 'Montserrat', sans-serif;
+    transform: translateY(-50%);
+    display: block;
+    padding: 0.3rem;
+    width: 40px;
+    color: var(--text1);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.form-group > input:focus, textarea:focus {
-	border-bottom: 1px solid teal;
+.form-group > input:focus,
+textarea:focus {
+    border-bottom: 1px solid teal;
 }
 
-.form-group > input, textarea {
-	background-color: var(--background-third);
-	width: 100%;
+.form-group > input,
+textarea {
+    background-color: var(--background3);
+    width: 100%;
     padding: 1rem;
     padding-left: 60px;
-	border: none;
-	outline: none;
-	font-size: 1rem;
-    color: var(--text-primary);
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--text2);
     resize: vertical;
 }
 
 .form-group > input {
-	font-weight: bold;
-	font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-family: var(--montserrat);
 }
 
 .form-group > textarea {
-	height: 55px;
-	font-family: 'Lato', sans-serif;
+    height: 55px;
+    font-family: var(--lato);
 }

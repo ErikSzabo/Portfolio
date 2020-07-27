@@ -3,23 +3,23 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    font-family: 'Lato', 'sans-serif';
+    font-family: var(--lato);
     font-size: 1.3rem;
     line-height: 2rem;
 }
 
 .project-page h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--montserrat);
 }
 
 .p-title {
     font-size: 1.5rem;
     margin: 1rem 0;
     margin-top: 3rem;
-    color: var(--text-primary);
-    border-bottom: 1px solid var(--text-gray);
+    color: var(--text1);
+    border-bottom: 1px solid var(--text2);
     padding-bottom: 1rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--montserrat);
 }
 
 .p-description {
