@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import AwesomeSlider from 'react-awesome-slider';
 import ContentItem from './ContentItem';
 import VisitContent from './VisitContent';
+import './ProjectPage.css';
 import 'react-awesome-slider/dist/styles.css';
 
 // content

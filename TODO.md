@@ -12,10 +12,10 @@
     -   At so many places components only looks normal, because of outer components' flexbox or some crap.
 -   [ ] **#G5** Opened navigation colors should match the theme pattern
 -   [ ] **#G6** CSS varibale names are kinda shit, rename them
--   [ ] **#G7** Make modules and put the components inside the modules with their CSS
+-   [x] **#G7** Make modules and put the components inside the modules with their CSS
 -   [ ] **#G8** Make sure that there isn't any more CSS conflict
     -   Like overrides and important keyword.
-    -   [ ] **G8.1** Known: App.css hidden class overrides nav hidden class, and this prevents nav animation
+    -   [x] **G8.1** Known: App.css hidden class overrides nav hidden class, and this prevents nav animation
 -   [ ] **#G9** Make a fantastic frontpage :|
 -   [ ] **#G10** Some call to action buttons somewhere?
 

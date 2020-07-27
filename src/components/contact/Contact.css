@@ -1,0 +1,24 @@
+.contacts {
+    margin: auto;
+    max-width: 800px;
+}
+
+.contacts h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contacts > p {
+    text-align: justify;
+    line-height: 1.7rem;
+    font-size: 1.2rem;
+}
+
+.contacts > p:last-child {
+    margin-top: 20px;
+}
+
+.contact-form {
+    display: grid;
+    gap: 20px;
+    margin-top: 40px;
+}

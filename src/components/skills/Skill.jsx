@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Skill.css';
 
 const Skill = ({ name, logo, fill, description }) => {
     const [imgLoaded, setImgLoaded] = useState(false);

@@ -4,45 +4,63 @@ import ThemeSwitcher from './ThemeSwitcher';
 import Dropdown from './Dropdown';
 import DropdownItem from './DropdownItem';
 import Hamburger from './Hamburger';
+import './Nav.css';
 
 const Nav = () => {
-	const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);
 
-	const dropdownToggle = () => {
-		if (window.innerWidth > 600) return;
-		setOpen(!open);
-	}
+    const dropdownToggle = () => {
+        if (window.innerWidth > 600) return;
+        setOpen(!open);
+    };
 
-	return (
-		<div>
-			<nav className="navbar">
-				<ul className="navbar-nav">
+    return (
+        <div>
+            <nav className="navbar">
+                <ul className="navbar-nav">
+                    <li className="menu-item">
+                        <Link to="/projects">
+                            <i
+                                className="fa fa-terminal fa-2x"
+                                aria-hidden="true"
+                            ></i>
+                        </Link>
+                    </li>
 
-					<li className="menu-item">
-						<Link to="/projects">
-							<i className="fa fa-terminal fa-2x" aria-hidden="true"></i>
-						</Link>
-					</li>
+                    <li className="menu-item">
+                        <ThemeSwitcher />
+                    </li>
 
-					<li className="menu-item">
-						<ThemeSwitcher />
-					</li>
+                    <li onClick={() => setOpen(!open)} className="menu-item">
+                        <Hamburger openState={open} />
+                    </li>
+                </ul>
+            </nav>
 
-					<li onClick={() => setOpen(!open)} className="menu-item">
-						<Hamburger openState={open} />
-					</li>
-
-				</ul>
-			</nav>
-
-			<Dropdown hidden={!open}>
-				<DropdownItem navToggle={dropdownToggle} name="Home" linkTo="/" />
-				<DropdownItem navToggle={dropdownToggle} name="Projects" linkTo="/projects" />
-				<DropdownItem navToggle={dropdownToggle} name="Skills" linkTo="/skills" />
-				<DropdownItem navToggle={dropdownToggle} name="Contact" linkTo="/contact" />
-			</Dropdown>
-		</div>
-	)
+            <Dropdown hidden={!open}>
+                <DropdownItem
+                    navToggle={dropdownToggle}
+                    name="Home"
+                    linkTo="/"
+                />
+                <DropdownItem
+                    navToggle={dropdownToggle}
+                    name="Projects"
+                    linkTo="/projects"
+                />
+                <DropdownItem
+                    navToggle={dropdownToggle}
+                    name="Skills"
+                    linkTo="/skills"
+                />
+                <DropdownItem
+                    navToggle={dropdownToggle}
+                    name="Contact"
+                    linkTo="/contact"
+                />
+            </Dropdown>
+        </div>
+    );
 };
 
 export default Nav;

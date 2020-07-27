@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Skill from './Skill';
+import './Skills.css';
 
 const Skills = () => {
     const [skills, setSkills] = useState([]);

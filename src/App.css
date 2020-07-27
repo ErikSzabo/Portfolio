@@ -5,18 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
-@import './styles/container.css';
-@import './styles/contact.css';
-@import './styles/formGroup.css';
-@import './styles/formButtons.css';
-@import './styles/skills.css';
-@import './styles/projects.css';
-@import './styles/project.css';
-@import './styles/skill.css';
-@import './styles/nav.css';
-@import './styles/projectPage.css';
-@import './styles/tags.css';
-
 :root {
     font-size: 16px;
     font-family: 'Lato', sans-serif;

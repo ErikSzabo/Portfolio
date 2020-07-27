@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import Project from './Project';
 import FilterTag from './FilterTag';
+import './Projects.css';
 
 const filters = {
     none: 'ALL',

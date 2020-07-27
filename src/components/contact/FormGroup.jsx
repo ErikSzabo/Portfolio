@@ -1,8 +1,18 @@
-import React from 'react'
+import React from 'react';
+import './FormGroup.css';
 
-const FormGroup = ({ placeholder, iconClass, type, name, isTextArea, setter }) => (
+const FormGroup = ({
+    placeholder,
+    iconClass,
+    type,
+    name,
+    isTextArea,
+    setter,
+}) => (
     <div className="form-group">
-        <label htmlFor={name}><i className={iconClass} aria-hidden="true"></i></label>
+        <label htmlFor={name}>
+            <i className={iconClass} aria-hidden="true"></i>
+        </label>
         {isTextArea ? (
             <textarea
                 onChange={(e) => setter(e.target.value)}
@@ -10,7 +20,7 @@ const FormGroup = ({ placeholder, iconClass, type, name, isTextArea, setter }) =
                 name={name}
                 id={name}
             />
-        ) :
+        ) : (
             <input
                 onChange={(e) => setter(e.target.value)}
                 placeholder={placeholder}
@@ -18,9 +28,8 @@ const FormGroup = ({ placeholder, iconClass, type, name, isTextArea, setter }) =
                 name={name}
                 id={name}
             />
-        }
+        )}
     </div>
-)
+);
 
-
-export default FormGroup
+export default FormGroup;

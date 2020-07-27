@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Tag from './Tag';
+import './Project.css';
 
 const Project = ({ id, name, img, description, tags }) => {
     const [imgLoaded, setImgLoaded] = useState(false);

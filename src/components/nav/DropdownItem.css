@@ -1,0 +1,28 @@
+.dropdownitem-text {
+    color: rgb(230, 230, 230);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    transition: color 200ms ease-in-out;
+}
+
+.dropdownitem-text:hover {
+    color: white;
+}
+
+.dropdown-item {
+    padding: 15px;
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+    .dropdown-item {
+        font-size: 2rem;
+    }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+    .dropdown-item:first-child {
+        margin-left: 15px;
+    }
+}

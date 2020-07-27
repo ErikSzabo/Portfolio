@@ -1,5 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './DropdownItem.css';
 
 const DropdownItem = ({ linkTo, name, navToggle }) => (
     <div onClick={navToggle} className="dropdown-item">
@@ -7,6 +8,6 @@ const DropdownItem = ({ linkTo, name, navToggle }) => (
             <span className="dropdownitem-text">{name}</span>
         </Link>
     </div>
-)
+);
 
 export default DropdownItem;

@@ -1,0 +1,8 @@
+.filter-tag {
+    cursor: pointer;
+    transition: 100ms all ease-in-out;
+}
+
+.filter-tag:hover {
+    transform: scale(1.05);
+}
