@@ -1,0 +1,72 @@
+.landing-page {
+    display: flex;
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.landing__title {
+    color: var(--text3) !important;
+}
+
+.landing__description {
+    line-height: 28px;
+    font-size: 17px;
+    color: var(--text1);
+    font-family: var(--montserrat);
+}
+
+.landing__buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.landing__btn,
+.landing__btn--git {
+    padding: 0.8rem;
+    color: white;
+    text-transform: uppercase;
+    background-color: rgb(0, 162, 255);
+    width: fit-content;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.landing__btn--git {
+    background: rgb(56, 56, 56);
+    display: flex;
+    gap: 5px;
+}
+
+.landing__git {
+    height: 20px;
+    width: 20px;
+}
+
+.development {
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: red;
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+    .landing {
+        width: 85%;
+    }
+    .profile__img {
+        max-height: 100px;
+        border-radius: 50px;
+    }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+    .landing {
+        width: 550px;
+    }
+}

@@ -18,7 +18,7 @@
     --background2: #1d1d1f;
     --background3: rgb(42, 42, 48);
     --transition-speed: 600ms;
-    --highlight: #ff8500;
+    --highlight: #0099ff;
     --shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
     --tag-background: #454e56;
     --tag-foreground: #b2becd;
@@ -66,9 +66,7 @@ a {
 }
 
 .text-highlight {
-    background-color: var(--background3);
     color: var(--highlight);
-    padding: 3px;
 }
 
 .hidden {
