@@ -17,15 +17,5 @@
     -   Like overrides and important keyword.
     -   [x] **G8.1** Known: App.css hidden class overrides nav hidden class, and this prevents nav animation
 -   [ ] **#G9** Make a fantastic frontpage :|
-
-# Admin
-
--   [ ] **#A1** Create login page with the route of /login
-    -   [ ] **#A1.1** Redirect to dashboard after successfull login.
--   [ ] **#A2** Create dashboard page where the admin (me) can manage the content of the site by API calls
-    -   Dashboard and actions inside it should only be accesible with a valid authorization token from the API
--   [ ] **#A3** Create private route for /dashboard
-    -   If the user (me) is not logged in, redirect to login page
-    -   Use the API to login and get authorization token
-    -   store the token in a http cookie (or in localstorage with extra security steps to prevent cross site scripting and other amazing things)
-    -   Private routes should be animated routes as well
+-   [ ] **G10** SEO optimization
+    -   react-helmet
