@@ -35,3 +35,17 @@
 .x-burger > .burger__line:nth-child(2n) {
     opacity: 0;
 }
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+    .burger {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    .x-burger {
+        transform: scale(0.8);
+    }
+    .x-burger > .burger__line {
+        top: 30px;
+        left: 5px;
+    }
+}
