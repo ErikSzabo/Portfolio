@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import MountTransition from './MountTransition';
 
-const RouteTransition = ({
+const PrivateRouteTransition = ({
     children,
     exact = false,
     path,
@@ -10,6 +10,7 @@ const RouteTransition = ({
     slideUp = 0,
     ...rest
 }) => (
+    // TODO: Implement private route
     <Route exact={exact} path="/" {...rest}>
         <MountTransition slide={slide} slideUp={slideUp}>
             {children}
@@ -17,4 +18,4 @@ const RouteTransition = ({
     </Route>
 );
 
-export default RouteTransition;
+export default PrivateRouteTransition;

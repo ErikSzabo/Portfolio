@@ -21,6 +21,7 @@
 # Admin
 
 -   [ ] **#A1** Create login page with the route of /login
+    -   [ ] **#A1.1** Redirect to dashboard after successfull login.
 -   [ ] **#A2** Create dashboard page where the admin (me) can manage the content of the site by API calls
     -   Dashboard and actions inside it should only be accesible with a valid authorization token from the API
 -   [ ] **#A3** Create private route for /dashboard
