@@ -1,28 +1,28 @@
-.dropdownitem-text {
+.item__text {
     color: var(--text2);
     font-family: var(--montserrat);
     font-weight: 900;
     transition: color 200ms ease-in-out;
 }
 
-.dropdownitem-text:hover {
+.item__text:hover {
     color: var(--text3);
 }
 
-.dropdown-item {
+.item {
     padding: 15px;
 }
 
 /* Small screens */
 @media only screen and (max-width: 600px) {
-    .dropdown-item {
+    .item {
         font-size: 2rem;
     }
 }
 
 /* Large screens */
 @media only screen and (min-width: 600px) {
-    .dropdown-item:first-child {
+    .item:first-child {
         margin-left: 15px;
     }
 }

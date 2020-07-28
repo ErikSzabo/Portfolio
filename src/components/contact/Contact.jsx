@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FormGroup from './FormGroup';
 import FormButtons from './FormButtons';
-import './Contact.css';
+import './Contact.scoped.css';
 
 const Contact = () => {
     const [name, setName] = useState('');
@@ -59,15 +59,15 @@ const Contact = () => {
 
     return (
         <div className="contacts">
-            <h1>Contact Me!</h1>
-            <p>
+            <h1 className="contacts__header">Contact Me!</h1>
+            <p className="contacts__description">
                 If you are intrested, fill in the form, send me a mail and I
                 will answer you as soon as possible! If you don't like forms,
                 you can send me an e-mail to {'  '}
                 <span className="text-highlight">erik1szabo1@gmail.com</span>.
                 I'm mainly intrested in frontend and "JavaScript" development.
             </p>
-            <form className="contact-form" onSubmit={submit}>
+            <form className="contacts__form" onSubmit={submit}>
                 <FormGroup
                     name="name"
                     iconClass="fa fa-user fa-2x"

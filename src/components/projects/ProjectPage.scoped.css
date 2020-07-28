@@ -22,17 +22,17 @@
     font-family: var(--montserrat);
 }
 
-.p-description {
+.project-page__description {
     text-align: justify;
 }
 
-.p-list {
+.project-page__list {
     padding-left: 20px;
     margin: 1rem 0;
     list-style: circle;
 }
 
-.p-list li {
+.project-page__list li {
     margin: 0.3rem 0;
 }
 

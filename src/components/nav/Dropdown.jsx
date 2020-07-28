@@ -1,9 +1,9 @@
 import React from 'react';
-import './Dropdown.css';
+import './Dropdown.scoped.css';
 
 const Dropdown = ({ hidden, children }) => (
-    <div className={`nav-dropdown ${hidden && 'closed'}`}>
-        <div className="nav-dropdown-childs">{children}</div>
+    <div className={`dropdown ${hidden && 'closed'}`}>
+        <div className="dropdown__childs">{children}</div>
     </div>
 );
 

@@ -5,7 +5,7 @@
     z-index: 100;
 }
 
-.navbar-nav {
+.menu {
     list-style: none;
     position: relative;
     display: flex;
@@ -13,14 +13,7 @@
     z-index: 100;
 }
 
-.nav-links {
-    width: 300px;
-    height: 350px;
-    background: linear-gradient(to bottom right, #fb9865, #f96a1f 85%);
-    height: 100vh;
-}
-
-.menu-item {
+.menu__item {
     background: #454e56;
     width: 70px;
     height: 70px;
@@ -29,12 +22,12 @@
     box-shadow: var(--shadow);
 }
 
-.menu-item:first-child,
-.navbar-nav {
+.menu__item:first-child,
+.menu {
     border-radius: 0px 0px 0px 30px;
 }
 
-.menu-item:first-child {
+.menu__item:first-child {
     background: rgb(0, 162, 255);
 }
 

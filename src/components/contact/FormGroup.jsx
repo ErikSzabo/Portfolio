@@ -1,5 +1,5 @@
 import React from 'react';
-import './FormGroup.css';
+import './FormGroup.scoped.css';
 
 const FormGroup = ({
     placeholder,

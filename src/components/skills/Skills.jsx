@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Skill from './Skill';
-import './Skills.css';
+import './Skills.scoped.css';
 
 const Skills = () => {
     const [skills, setSkills] = useState([]);
@@ -12,9 +12,9 @@ const Skills = () => {
     }, []);
 
     return (
-        <div className="skills-container">
+        <div className="skills">
             <h1>Skills</h1>
-            <div className="skills">
+            <div className="skills__wrapper">
                 {skills.map((skill, index) => (
                     <Skill
                         key={index}

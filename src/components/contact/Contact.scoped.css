@@ -3,11 +3,11 @@
     max-width: 800px;
 }
 
-.contacts h1 {
+.contacts__header {
     font-family: var(--montserrat);
 }
 
-.contacts > p {
+.contacts__description {
     text-align: justify;
     line-height: 1.7rem;
     font-size: 1.2rem;
@@ -17,7 +17,7 @@
     margin-top: 20px;
 }
 
-.contact-form {
+.contacts__form {
     display: grid;
     gap: 20px;
     margin-top: 40px;

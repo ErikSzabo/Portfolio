@@ -1,4 +1,4 @@
-.visit-btn {
+.visit {
     text-transform: uppercase;
     font-size: 0.8rem;
     font-weight: 900;
@@ -12,12 +12,12 @@
     cursor: pointer;
 }
 
-.visit-btn > div,
+.visit > div,
 .fa-external-link {
     color: rgb(219, 219, 219);
 }
 
-.visit-btn i {
+.visit i {
     margin-right: 5px;
     font-weight: bold;
 }

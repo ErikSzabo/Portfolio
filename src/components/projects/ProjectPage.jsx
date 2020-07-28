@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import AwesomeSlider from 'react-awesome-slider';
 import ContentItem from './ContentItem';
 import VisitContent from './VisitContent';
-import './ProjectPage.css';
+import './ProjectPage.scoped.css';
 import 'react-awesome-slider/dist/styles.css';
 
 // content
@@ -30,7 +30,7 @@ const parseContent = (content) => {
     return (
         <div>
             <h1>{content.name}</h1>
-            <p className="p-description">{content.description}</p>
+            <p className="project-page__description">{content.description}</p>
 
             <VisitContent url={content.githubUrl} />
 
@@ -44,7 +44,7 @@ const parseContent = (content) => {
                 <ContentItem key={index} title={element.title}>
                     {element.content}
                     {element.contentType === 'list' && (
-                        <ul className="p-list">
+                        <ul className="project-page__list">
                             {element.listItems.map((item, index) => (
                                 <li key={index}>{item}</li>
                             ))}

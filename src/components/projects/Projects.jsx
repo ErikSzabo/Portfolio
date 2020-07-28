@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import Project from './Project';
 import FilterTag from './FilterTag';
-import './Projects.css';
+import './Projects.scoped.css';
 
 const filters = {
     none: 'ALL',
@@ -41,7 +41,7 @@ const Projects = () => {
 
     return (
         <div className="projects">
-            <div className="projects-header">
+            <div className="projects__header">
                 <h1>My Projects</h1>
                 <p>
                     These are all of my own projects. I'm an unversity student,
@@ -49,14 +49,14 @@ const Projects = () => {
                     and javascript, although I learnt python and java at the
                     university as well.
                 </p>
-                <div className="filter-tags">{filterTags}</div>
+                <div className="projects__filter-tags">{filterTags}</div>
                 <br />
-                <p className="filter-text">
+                <p className="projects__filter-text">
                     Feel free to use these filters above!
                 </p>
             </div>
 
-            <div className="projects-wrapper">
+            <div className="projects__wrapper">
                 {filterProjects().map((p) => (
                     <Project
                         key={p._id}

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './FormButtons.css';
+import './FormButtons.scoped.css';
 
 const FormButtons = ({ submit }) => (
-    <div className="form-buttons">
-        <div onClick={submit} className="form-btn">
+    <div className="container">
+        <div onClick={submit} className="container__btn">
             Send message
         </div>
         <Link to="/projects">
-            <div className="form-btn">
+            <div className="container__btn">
                 I'm not sure{' '}
                 <span role="img" aria-label="">
                     😢

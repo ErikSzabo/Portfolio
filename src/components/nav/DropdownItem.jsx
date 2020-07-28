@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './DropdownItem.css';
+import './DropdownItem.scoped.css';
 
 const DropdownItem = ({ linkTo, name, navToggle }) => (
-    <div onClick={navToggle} className="dropdown-item">
+    <div onClick={navToggle} className="item">
         <Link to={linkTo}>
-            <span className="dropdownitem-text">{name}</span>
+            <span className="item__text">{name}</span>
         </Link>
     </div>
 );

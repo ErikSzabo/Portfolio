@@ -1,5 +1,5 @@
 import React from 'react';
-import './Tag.css';
+import './Tag.scoped.css';
 
 const colorMap = {
     javascript: {

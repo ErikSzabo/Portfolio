@@ -1,14 +1,8 @@
-.skills-container h1 {
+.skills h1 {
     text-align: center !important;
 }
 
-.skill-descriptions {
-    height: 60vh;
-    background-color: var(--background1);
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3);
-}
-
-.skills {
+.skills__wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(17rem, 30rem));
     gap: 1.5rem;

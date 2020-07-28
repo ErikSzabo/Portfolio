@@ -1,11 +1,11 @@
 import React from 'react';
-import './Hamburger.css';
+import './Hamburger.scoped.css';
 
 const Hamburger = ({ openState }) => (
     <div className={openState ? 'x-burger' : 'burger'}>
-        <div className="burger-line"></div>
-        <div className="burger-line"></div>
-        <div className="burger-line"></div>
+        <div className="burger__line"></div>
+        <div className="burger__line"></div>
+        <div className="burger__line"></div>
     </div>
 );
 

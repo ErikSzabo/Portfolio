@@ -4,7 +4,7 @@ import ThemeSwitcher from './ThemeSwitcher';
 import Dropdown from './Dropdown';
 import DropdownItem from './DropdownItem';
 import Hamburger from './Hamburger';
-import './Nav.css';
+import './Nav.scoped.css';
 
 const Nav = () => {
     const [open, setOpen] = useState(false);
@@ -17,8 +17,8 @@ const Nav = () => {
     return (
         <div>
             <nav className="navbar">
-                <ul className="navbar-nav">
-                    <li className="menu-item">
+                <ul className="menu">
+                    <li className="menu__item">
                         <Link to="/projects">
                             <i
                                 className="fa fa-terminal fa-2x"
@@ -27,11 +27,11 @@ const Nav = () => {
                         </Link>
                     </li>
 
-                    <li className="menu-item">
+                    <li className="menu__item">
                         <ThemeSwitcher />
                     </li>
 
-                    <li onClick={() => setOpen(!open)} className="menu-item">
+                    <li onClick={() => setOpen(!open)} className="menu__item">
                         <Hamburger openState={open} />
                     </li>
                 </ul>
