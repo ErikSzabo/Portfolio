@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getProjects, getSkills } from '../../api';
 import './Dashboard.scoped.css';
+import Button from '../generic/Button';
 
 const Dashboard = () => {
   const [selected, setSelected] = useState('projects');
@@ -25,7 +26,7 @@ const Dashboard = () => {
           <option value="projects">Projects</option>
           <option value="skills">Skills</option>
         </select>
-        <button className="dashboard__add">Add new</button>
+        <Button className="dashboard__add" type="ok" value="Add new" />
       </div>
 
       <br />

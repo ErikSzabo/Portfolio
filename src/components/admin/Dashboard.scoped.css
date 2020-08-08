@@ -10,18 +10,6 @@
 }
 
 .dashboard__add {
-  background-color: teal;
-  border: none;
-  font-family: var(--montserrat);
-  font-size: 0.8rem;
-  font-weight: bold;
-  padding: 0.3rem;
-  height: 38px;
-  width: 75px;
-  cursor: pointer;
-  color: white;
-  border-radius: 5px;
-  box-shadow: var(--shadow);
   margin-left: 1rem;
 }
 
