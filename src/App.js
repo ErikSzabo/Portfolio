@@ -18,28 +18,16 @@ const App = () => (
   <Router>
     <Nav />
     <Container>
-      <AnimatedRoutes exitBeforeEnter initial={false}>
-        <RouteTransition exact path="/" slide={50} component={Landing} />
-        <RouteTransition path="/skills" slide={50} component={Skills} />
-        <RouteTransition path="/contact" slide={50} component={Contact} />
-        <RouteTransition
-          exact
-          path="/projects"
-          slide={50}
-          component={Projects}
-        />
-        <RouteTransition
-          path="/projects/:id"
-          slide={50}
-          component={ProjectPage}
-        />
-        <RouteTransition path="/login" slide={50} component={Login} />
-        <PrivateRouteTransition
-          exact
-          path="/dashboard"
-          slide={50}
-          component={Dashboard}
-        />
+      <AnimatedRoutes>
+        <RouteTransition exact={true} path="/" component={Landing} />
+        <RouteTransition path="/skills" component={Skills} />
+        <RouteTransition path="/contact" component={Contact} />
+        <RouteTransition exact={true} path="/projects" component={Projects} />
+        <RouteTransition path="/projects/:id" component={ProjectPage} />
+        <RouteTransition path="/login" component={Login} />
+        <PrivateRouteTransition path="/dashboard" component={Dashboard} />
+        <PrivateRouteTransition path="/dashboard/projects/:id" />
+        <PrivateRouteTransition path="/dashboard/skills/:id" />
       </AnimatedRoutes>
     </Container>
   </Router>

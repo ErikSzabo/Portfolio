@@ -7,7 +7,7 @@ const PrivateRouteTransition = ({
   component: Component,
   exact = false,
   path,
-  slide = 0,
+  slide = 50,
   slideUp = 0,
   ...rest
 }) => {
