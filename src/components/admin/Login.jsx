@@ -1,22 +1,19 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { ApplicationContext, actions } from '../Container';
-import { login, auth, TOKEN_KEY } from '../../api';
-import { Redirect } from 'react-router-dom';
+import Button from '../generic/Button';
+import { login, TOKEN_KEY } from '../../api';
 import './Login.scoped.css';
 
 const Login = () => {
+  const { state, dispatch } = useContext(ApplicationContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [redirect, setRedirect] = useState(false);
-  const { dispatch } = useContext(ApplicationContext);
+  const history = useHistory();
 
   useEffect(() => {
-    if (localStorage.getItem(TOKEN_KEY)) {
-      auth(localStorage.getItem(TOKEN_KEY))
-        .then(() => setRedirect(true))
-        .catch(() => {});
-    }
-  }, []);
+    if (state.user.isAuthenticated) history.push('/dashboard');
+  }, [state.user.isAuthenticated, history]);
 
   const submit = async (e) => {
     e.preventDefault();
@@ -24,7 +21,7 @@ const Login = () => {
       const token = await login(username, password);
       localStorage.setItem(TOKEN_KEY, token);
       dispatch({ type: actions.LOGIN, payload: username });
-      setRedirect(true);
+      history.push('/dashboard');
     } catch (error) {
       setUsername('');
       setPassword('');
@@ -33,7 +30,6 @@ const Login = () => {
 
   return (
     <div className="login">
-      {redirect && <Redirect to="/dashboard" />}
       <h1 className="login__header">Login</h1>
       <form className="login__form" onSubmit={submit}>
         <input
@@ -50,7 +46,7 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <input className="login__submit" type="submit" value="Login!" />
+        <Button isSubmit type="ok" value="Login!" />
       </form>
     </div>
   );
