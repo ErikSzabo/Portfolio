@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useCallback } from 'react';
+import DashboardList from './DashboardList';
 import Button from '../generic/Button';
 import Popup from '../generic/Popup';
 import { ApplicationContext } from '../Container';
@@ -12,7 +13,12 @@ const Dashboard = () => {
   } = useContext(ApplicationContext);
   const [selected, setSelected] = useState('projects');
   const [open, setOpen] = useState(false);
-  const [current, setCurrent] = useState(null);
+  const [current, setCurrent] = useState({});
+
+  const onItemClicked = (item) => {
+    setOpen(true);
+    setCurrent(item);
+  };
 
   return (
     <div className="dashboard">
@@ -33,44 +39,16 @@ const Dashboard = () => {
       <br />
       <br />
       <hr />
+
       <div className="dashboard__container">
         {selected === 'skills' ? (
-          <div className="dashboard__skills">
-            <div className="dash-skill">
-              {skills.map((skill, index) => (
-                <div key={index} className="dash-skill-item">
-                  {skill.name}
-                  <i
-                    onClick={() => {
-                      setOpen((prev) => !prev);
-                      setCurrent(skill);
-                    }}
-                    className="fa fa-pencil-square-o fa-2x"
-                    aria-hidden="true"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <DashboardList items={skills} onItemClick={onItemClicked} />
         ) : (
-          <div className="dashboard__projects">
-            <div className="dash-project">
-              {projects.map((project, index) => (
-                <div key={index} className="dash-project-item">
-                  {project.name}
-                  <i
-                    className="fa fa-pencil-square-o fa-2x"
-                    aria-hidden="true"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <DashboardList items={projects} onItemClick={onItemClicked} />
         )}
       </div>
-      <Popup open={open}>
-        <h1>Teszt</h1>
-      </Popup>
+
+      <Popup open={open}>{current.name}</Popup>
     </div>
   );
 };

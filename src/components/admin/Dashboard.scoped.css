@@ -12,31 +12,3 @@
 .dashboard__add {
   margin-left: 1rem;
 }
-
-.dash-skill,
-.dash-project {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.dash-skill-item,
-.dash-project-item {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  padding-left: 0.8rem;
-  background-color: var(--background3);
-  color: var(--text1);
-  box-shadow: var(--shadow);
-  font-family: var(--montserrat);
-}
-
-.dash-skill-item > .fa-pencil-square-o,
-.dash-project-item > .fa-pencil-square-o {
-  margin-left: auto;
-  margin-right: 0.8rem;
-  color: teal;
-  cursor: pointer;
-}
