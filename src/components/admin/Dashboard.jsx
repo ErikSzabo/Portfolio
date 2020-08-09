@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { getProjects, getSkills } from '../../api';
-import './Dashboard.scoped.css';
+import React, { useState, useContext } from 'react';
 import Button from '../generic/Button';
+import Popup from '../generic/Popup';
+import { ApplicationContext } from '../Container';
+import './Dashboard.scoped.css';
 
 const Dashboard = () => {
+  const {
+    state: {
+      content: { projects, skills },
+    },
+  } = useContext(ApplicationContext);
   const [selected, setSelected] = useState('projects');
-  const [projects, setProjects] = useState([]);
-  const [skills, setSkills] = useState([]);
-
-  useEffect(() => {
-    getProjects().then(setProjects).catch();
-    getSkills().then(setSkills).catch();
-  }, []);
+  const [open, setOpen] = useState(false);
+  const [current, setCurrent] = useState(null);
 
   return (
     <div className="dashboard">
@@ -40,6 +41,10 @@ const Dashboard = () => {
                 <div key={index} className="dash-skill-item">
                   {skill.name}
                   <i
+                    onClick={() => {
+                      setOpen((prev) => !prev);
+                      setCurrent(skill);
+                    }}
                     className="fa fa-pencil-square-o fa-2x"
                     aria-hidden="true"
                   />
@@ -63,6 +68,9 @@ const Dashboard = () => {
           </div>
         )}
       </div>
+      <Popup open={open}>
+        <h1>Teszt</h1>
+      </Popup>
     </div>
   );
 };

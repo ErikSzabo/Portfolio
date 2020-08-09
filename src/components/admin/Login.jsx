@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { UserContext, actions } from '../Container';
+import { ApplicationContext, actions } from '../Container';
 import { login, auth, TOKEN_KEY } from '../../api';
 import { Redirect } from 'react-router-dom';
 import './Login.scoped.css';
@@ -8,7 +8,7 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [redirect, setRedirect] = useState(false);
-  const { dispatch } = useContext(UserContext);
+  const { dispatch } = useContext(ApplicationContext);
 
   useEffect(() => {
     if (localStorage.getItem(TOKEN_KEY)) {

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import MountTransition from './MountTransition';
-import { UserContext } from '../Container';
+import { ApplicationContext } from '../Container';
 
 const PrivateRouteTransition = ({
   component: Component,
@@ -12,8 +12,10 @@ const PrivateRouteTransition = ({
   ...rest
 }) => {
   const {
-    state: { isAuthenticated },
-  } = useContext(UserContext);
+    state: {
+      user: { isAuthenticated },
+    },
+  } = useContext(ApplicationContext);
 
   return (
     <MountTransition slide={slide} slideUp={slideUp}>

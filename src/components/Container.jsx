@@ -1,13 +1,15 @@
 import React, { useEffect, useReducer } from 'react';
-import { auth, TOKEN_KEY } from '../api';
+import { auth, TOKEN_KEY, getProjects, getSkills } from '../api';
 import './Container.scoped.css';
 
-export const UserContext = React.createContext({});
+export const ApplicationContext = React.createContext({});
 
 export const actions = {
   LOGIN: 'login',
   AUTH: 'auth',
   AUTH_FAILED: 'failed',
+  SET_PROJECTS: 'set-projects',
+  SET_SKILLS: 'set-skills',
 };
 
 const reducer = (state, action) => {
@@ -16,13 +18,33 @@ const reducer = (state, action) => {
     case actions.AUTH:
       return {
         ...state,
-        isAuthenticated: true,
-        username: action.payload,
+        user: {
+          isAuthenticated: true,
+          username: action.payload,
+        },
       };
     case actions.AUTH_FAILED:
       return {
         ...state,
-        isAuthenticated: false,
+        user: {
+          isAuthenticated: false,
+        },
+      };
+    case actions.SET_PROJECTS:
+      return {
+        ...state,
+        content: {
+          projects: action.payload,
+          skills: state.content.skills,
+        },
+      };
+    case actions.SET_SKILLS:
+      return {
+        ...state,
+        content: {
+          projects: state.content.projects,
+          skills: action.payload,
+        },
       };
     default:
       return { ...state };
@@ -31,22 +53,39 @@ const reducer = (state, action) => {
 
 const Container = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, {
-    isAuthenticated: false,
-    username: '',
+    user: {
+      isAuthenticated: false,
+      username: '',
+    },
+    content: {
+      projects: [],
+      skills: [],
+    },
   });
 
   useEffect(() => {
     const token = localStorage.getItem(TOKEN_KEY);
-    if (!token) return;
-    auth(token)
-      .then((user) => dispatch({ type: actions.AUTH, payload: user.username }))
-      .catch((error) => {});
+    if (token) {
+      auth(token)
+        .then((user) =>
+          dispatch({ type: actions.AUTH, payload: user.username })
+        )
+        .catch();
+    }
+    getProjects()
+      .then((projects) =>
+        dispatch({ type: actions.SET_PROJECTS, payload: projects })
+      )
+      .catch();
+    getSkills()
+      .then((skills) => dispatch({ type: actions.SET_SKILLS, payload: skills }))
+      .catch();
   }, []);
 
   return (
-    <UserContext.Provider value={{ state, dispatch }}>
+    <ApplicationContext.Provider value={{ state, dispatch }}>
       <div className="page-container">{children}</div>
-    </UserContext.Provider>
+    </ApplicationContext.Provider>
   );
 };
 

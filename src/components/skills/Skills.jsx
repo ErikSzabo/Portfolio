@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Skill from './Skill';
-import { getSkills } from '../../api';
+import { ApplicationContext } from '../Container';
 import './Skills.scoped.css';
 
 const Skills = () => {
-  const [skills, setSkills] = useState([]);
-
-  useEffect(() => {
-    getSkills().then((skills) => setSkills(skills));
-  }, []);
+  const {
+    state: {
+      content: { skills },
+    },
+  } = useContext(ApplicationContext);
 
   return (
     <div className="skills">

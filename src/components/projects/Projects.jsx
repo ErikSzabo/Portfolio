@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useContext, useMemo } from 'react';
 import Project from './Project';
 import FilterTag from './FilterTag';
-import { getProjects } from '../../api';
+import { ApplicationContext } from '../Container';
 import './Projects.scoped.css';
 
 const filters = {
@@ -13,12 +13,12 @@ const filters = {
 };
 
 const Projects = () => {
+  const {
+    state: {
+      content: { projects },
+    },
+  } = useContext(ApplicationContext);
   const [filter, setFilter] = useState(filters.none);
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    getProjects().then((projects) => setProjects(projects));
-  }, []);
 
   const filterProjects = () => {
     if (filter === filters.none) return projects;
