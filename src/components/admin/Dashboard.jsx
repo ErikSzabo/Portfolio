@@ -1,5 +1,6 @@
-import React, { useState, useContext, useCallback } from 'react';
+import React, { useState, useContext } from 'react';
 import DashboardList from './DashboardList';
+import SkillEditor from './SkillEditor';
 import Button from '../generic/Button';
 import Popup from '../generic/Popup';
 import { ApplicationContext } from '../Container';
@@ -48,7 +49,13 @@ const Dashboard = () => {
         )}
       </div>
 
-      <Popup open={open}>{current.name}</Popup>
+      <Popup open={open}>
+        {selected === 'skills' ? (
+          <SkillEditor skill={current} popupSetter={setOpen} />
+        ) : (
+          current.name
+        )}
+      </Popup>
     </div>
   );
 };
