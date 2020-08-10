@@ -34,7 +34,15 @@ const Dashboard = () => {
           <option value="projects">Projects</option>
           <option value="skills">Skills</option>
         </select>
-        <Button className="dashboard__add" type="ok" value="Add new" />
+        <Button
+          className="dashboard__add"
+          type="ok"
+          value="Add new"
+          onClick={() => {
+            setOpen(true);
+            setCurrent({});
+          }}
+        />
       </div>
 
       <br />
