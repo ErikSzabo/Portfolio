@@ -1,6 +1,5 @@
 .skilleditor {
-  width: 400px;
-  background-color: var(--background3);
+  background-color: var(--background1);
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -11,14 +10,12 @@
 .skilleditor > input,
 .skilleditor > textarea {
   width: 100%;
-  padding: 0.5rem;
-  background-color: var(--background1);
+  background-color: var(--background3);
   border: none;
 }
 
 .skilleditor > textarea {
   resize: none;
-  height: 100px;
 }
 
 .skilleditor__buttons {
@@ -28,4 +25,38 @@
 
 .skilleditor__buttons > .generic__button {
   width: 100px;
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .skilleditor {
+    width: 400px;
+  }
+
+  .skilleditor > textarea {
+    height: 100px;
+  }
+
+  .skilleditor > input,
+  .skilleditor > textarea {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .skilleditor {
+    width: 600px;
+  }
+
+  .skilleditor > textarea {
+    height: 150px;
+  }
+
+  .skilleditor > input,
+  .skilleditor > textarea {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
 }
