@@ -9,6 +9,8 @@ import Contact from './components/contact/Contact';
 import Landing from './components/landing/Landing';
 import Container from './components/Container';
 import ProjectPage from './components/projects/ProjectPage';
+import SkillEditor from './components/admin/SkillEditor';
+import ProjectEditor from './components/admin/ProjectEditor';
 import AnimatedRoutes from './components/transition/AnimatedRoutes';
 import RouteTransition from './components/transition/RouteTransition';
 import PrivateRouteTransition from './components/transition/PrivateRouteTransition';
@@ -19,15 +21,31 @@ const App = () => (
     <Nav />
     <Container>
       <AnimatedRoutes>
-        <RouteTransition exact={true} path="/" component={Landing} />
+        <RouteTransition exact path="/" component={Landing} />
         <RouteTransition path="/skills" component={Skills} />
         <RouteTransition path="/contact" component={Contact} />
-        <RouteTransition exact={true} path="/projects" component={Projects} />
+        <RouteTransition exact path="/projects" component={Projects} />
         <RouteTransition path="/projects/:id" component={ProjectPage} />
         <RouteTransition path="/login" component={Login} />
-        <PrivateRouteTransition path="/dashboard" component={Dashboard} />
-        <PrivateRouteTransition path="/dashboard/projects/:id" />
-        <PrivateRouteTransition path="/dashboard/skills/:id" />
+        <PrivateRouteTransition exact path="/dashboard" component={Dashboard} />
+        <PrivateRouteTransition
+          path="/dashboard/projects/:id"
+          component={ProjectEditor}
+        />
+        <PrivateRouteTransition
+          path="/dashboard/skills/:id"
+          component={SkillEditor}
+        />
+        <PrivateRouteTransition
+          exact
+          path="/dashboard/projects"
+          component={ProjectEditor}
+        />
+        <PrivateRouteTransition
+          exact
+          path="/dashboard/skills"
+          component={SkillEditor}
+        />
       </AnimatedRoutes>
     </Container>
   </Router>

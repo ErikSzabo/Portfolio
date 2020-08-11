@@ -1,11 +1,10 @@
 import React, { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import DashboardList from './DashboardList';
-import SkillEditor from './SkillEditor';
 import Button from '../generic/Button';
-import Popup from '../generic/Popup';
 import { ApplicationContext, actions } from '../Container';
-import './Dashboard.scoped.css';
 import { deleteOne, types } from '../../api';
+import './Dashboard.scoped.css';
 
 const Dashboard = () => {
   const {
@@ -14,13 +13,15 @@ const Dashboard = () => {
     },
     dispatch,
   } = useContext(ApplicationContext);
+  const history = useHistory();
   const [selected, setSelected] = useState('projects');
-  const [open, setOpen] = useState(false);
-  const [current, setCurrent] = useState({});
 
   const onItemClicked = (item) => {
-    setOpen(true);
-    setCurrent(item);
+    if (selected === 'projects') {
+      history.push(`/dashboard/projects/${item._id}`);
+    } else if (selected === 'skills') {
+      history.push(`/dashboard/skills/${item._id}`);
+    }
   };
 
   const onItemDelete = async (item) => {
@@ -36,29 +37,12 @@ const Dashboard = () => {
       } else if (selected === 'projects') {
         await deleteOne(types.PROJECT, item._id);
         dispatch({
-          type: actions.SET_SKILLS,
+          type: actions.SET_PROJECTS,
           payload: projects.filter((project) => project._id !== item._id),
         });
       }
     } catch (error) {
-      // :(
-    }
-  };
-
-  const onSkillSubmit = (isNew, item) => {
-    if (isNew) {
-      dispatch({
-        type: actions.SET_SKILLS,
-        payload: [...skills, item],
-      });
-    } else {
-      dispatch({
-        type: actions.SET_SKILLS,
-        payload: skills.map((skill) => {
-          if (skill._id === item._id) return item;
-          return skill;
-        }),
-      });
+      window.alert('Error');
     }
   };
 
@@ -80,8 +64,11 @@ const Dashboard = () => {
           type="ok"
           value="Add new"
           onClick={() => {
-            setOpen(true);
-            setCurrent({});
+            if (selected === 'skills') {
+              history.push('/dashboard/skills');
+            } else {
+              history.push('/dashboard/projects');
+            }
           }}
         />
       </div>
@@ -105,18 +92,6 @@ const Dashboard = () => {
           />
         )}
       </div>
-
-      <Popup open={open}>
-        {selected === 'skills' ? (
-          <SkillEditor
-            skill={current}
-            popupSetter={setOpen}
-            onSubmit={onSkillSubmit}
-          />
-        ) : (
-          current.name
-        )}
-      </Popup>
     </div>
   );
 };
