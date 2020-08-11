@@ -1,14 +1,19 @@
-# devrik.net
+# Personal portfolio
 
 This is my portfolio website. I will use this to show my work in the future
 and it's also a good project to show off, because it tells to people what I'm
 capable of with React right now.
 
-## Contact form
+You can view my site here: https://devrik.me/
 
-Contact form currently using Google Apps Scripts to handle e-mails. It's nice
-beacuse without a server, user must have to open a mail client to send e-mails
-from a HTML form. However, right now, the only thing that user needs to do in order to send me an email, is to press the send button. I achieved this with google apps scripts, an with its MailApp api.
+# Frontend
+
+This repo is my frontend, hosted via Github Pages. It's using all kind of **React** stuff, although I still have to finish some things, like cleanups, some optimization, and adding support for SEO.
+
+# Backend
+
+My backend is powered by **express**.
+It can handle **authentication** and **CRUD** functionality for projects and "skills". I used **MongoDB** for the database, because it's a small project, and I value my time enough to not to go with some super amazing SQL.
 
 ## Worth mentioning
 
