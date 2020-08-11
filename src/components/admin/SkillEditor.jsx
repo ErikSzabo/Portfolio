@@ -4,10 +4,10 @@ import { postOne, types, updateOne } from '../../api';
 import './SkillEditor.scoped.css';
 
 const SkillEditor = ({ skill, popupSetter, onSubmit }) => {
-  const [name, setName] = useState(skill.name);
-  const [description, setDescription] = useState(skill.description);
-  const [progress, setProgress] = useState(skill.progress);
-  const [icon, setIcon] = useState(skill.icon);
+  const [name, setName] = useState(skill.name || '');
+  const [description, setDescription] = useState(skill.description || '');
+  const [progress, setProgress] = useState(skill.progress || '');
+  const [icon, setIcon] = useState(skill.icon || '');
 
   const [isNew] = useState(skill ? false : true);
 
