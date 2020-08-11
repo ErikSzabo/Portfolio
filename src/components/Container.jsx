@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
-import { auth, TOKEN_KEY, getProjects, getSkills } from '../api';
+import { auth, TOKEN_KEY, getAll, types } from '../api';
 import './Container.scoped.css';
 
 export const ApplicationContext = React.createContext({});
@@ -72,12 +72,12 @@ const Container = ({ children }) => {
         )
         .catch();
     }
-    getProjects()
+    getAll(types.PROJECT)
       .then((projects) =>
         dispatch({ type: actions.SET_PROJECTS, payload: projects })
       )
       .catch();
-    getSkills()
+    getAll(types.SKILL)
       .then((skills) => dispatch({ type: actions.SET_SKILLS, payload: skills }))
       .catch();
   }, []);

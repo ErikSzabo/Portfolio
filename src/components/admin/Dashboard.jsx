@@ -34,8 +34,7 @@ const Dashboard = () => {
           payload: skills.filter((skill) => skill._id !== item._id),
         });
       } else if (selected === 'projects') {
-        await deleteOne(types.PROJECT_MINI, item._id);
-        await deleteOne(types.PROJECT_PAGE, item._id);
+        await deleteOne(types.PROJECT, item._id);
         dispatch({
           type: actions.SET_SKILLS,
           payload: projects.filter((project) => project._id !== item._id),

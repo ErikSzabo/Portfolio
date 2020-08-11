@@ -4,7 +4,7 @@ import Tag from './Tag';
 import useWebAnimations, { fadeIn } from '@wellyshen/use-web-animations';
 import './Project.scoped.css';
 
-const Project = ({ id, name, img, description, tags }) => {
+const Project = ({ project }) => {
   const [imgLoaded, setImgLoaded] = useState(false);
   const { ref, animate } = useWebAnimations();
 
@@ -17,17 +17,21 @@ const Project = ({ id, name, img, description, tags }) => {
 
   return (
     <Link
-      to={`/projects/${id}`}
+      to={`/projects/${project._id}`}
       className={!imgLoaded ? 'hidden' : undefined}
       ref={ref}
     >
       <div className="project">
-        <img onLoad={() => setImgLoaded(true)} src={img} alt="" />
+        <img
+          onLoad={() => setImgLoaded(true)}
+          src={project.imgPreview}
+          alt=""
+        />
         <div className="project__text">
-          <h3>{name}</h3>
-          <p>{description}</p>
+          <h3>{project.name}</h3>
+          <p>{project.description}</p>
           <div className="project__tags">
-            {tags.map((tag, index) => {
+            {project.tags.map((tag, index) => {
               return <Tag key={index} name={tag} />;
             })}
           </div>

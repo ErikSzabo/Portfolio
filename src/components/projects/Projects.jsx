@@ -54,14 +54,7 @@ const Projects = () => {
 
       <div className="projects__wrapper">
         {filterProjects().map((p) => (
-          <Project
-            key={p._id}
-            id={p._id}
-            name={p.name}
-            description={p.description}
-            img={p.img}
-            tags={p.tags}
-          />
+          <Project key={p._id} project={p} />
         ))}
       </div>
     </div>
