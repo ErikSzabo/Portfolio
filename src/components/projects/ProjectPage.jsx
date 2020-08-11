@@ -3,7 +3,6 @@ import ReactMarkdown from 'react-markdown';
 import AwesomeSlider from 'react-awesome-slider';
 import VisitContent from './VisitContent';
 import { ApplicationContext } from '../Container';
-import { getOne, types } from '../../api';
 import './ProjectPage.scoped.css';
 import 'react-awesome-slider/dist/styles.css';
 
@@ -14,35 +13,24 @@ const ProjectPage = ({ match }) => {
     },
   } = useContext(ApplicationContext);
   const id = match.params.id;
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(true);
   const [project, setProject] = useState({});
 
   useEffect(() => {
     const cachedProject = projects.find((project) => project._id === id);
     if (cachedProject) {
       setProject(cachedProject);
-      setLoading(false);
       setError(false);
-      return;
+    } else {
+      setError(true);
     }
-    getOne(types.PROJECT, id)
-      .then((project) => {
-        setProject(project);
-        setLoading(false);
-        setError(false);
-      })
-      .catch(() => {
-        setError(true);
-        setLoading(false);
-      });
   }, [id, projects]);
 
   return (
     <div>
       <div className="project-page">
-        {loading ? null : error ? (
-          'The requested project does not exist :(!'
+        {error ? (
+          "There isn't any project like this, or it's still loading :("
         ) : (
           <div>
             <h1>{project.name}</h1>
