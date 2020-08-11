@@ -57,6 +57,11 @@ export const getProjectPageById = async (id) => {
 };
 
 export const deleteOne = async (type, id) => {
+  if (type === types.PROJECT_PAGE) {
+    const res = await axios.get(`${API_URL}/project-page/${id}`);
+    const deleteRes = await axios.delete(`${API_URL}/${type}/${res.data._id}`);
+    return deleteRes.data;
+  }
   const result = await axios.delete(`${API_URL}/${type}/${id}`);
   return result.data;
 };

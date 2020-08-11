@@ -16,9 +16,23 @@
   font-family: var(--montserrat);
 }
 
-.dashboard__item > .fa-pencil-square-o {
+.dashboard__buttons {
   margin-left: auto;
   margin-right: 0.8rem;
-  color: teal;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.dashboard__buttons > i {
   cursor: pointer;
+}
+
+.dashboard__buttons > .fa-pencil-square-o {
+  color: teal;
+}
+
+.dashboard__buttons > .fa-trash-o {
+  color: rgb(175, 40, 40);
+  margin-bottom: 3px;
 }

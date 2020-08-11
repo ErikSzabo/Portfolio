@@ -3,14 +3,16 @@ import DashboardList from './DashboardList';
 import SkillEditor from './SkillEditor';
 import Button from '../generic/Button';
 import Popup from '../generic/Popup';
-import { ApplicationContext } from '../Container';
+import { ApplicationContext, actions } from '../Container';
 import './Dashboard.scoped.css';
+import { deleteOne, types } from '../../api';
 
 const Dashboard = () => {
   const {
     state: {
       content: { projects, skills },
     },
+    dispatch,
   } = useContext(ApplicationContext);
   const [selected, setSelected] = useState('projects');
   const [open, setOpen] = useState(false);
@@ -19,6 +21,46 @@ const Dashboard = () => {
   const onItemClicked = (item) => {
     setOpen(true);
     setCurrent(item);
+  };
+
+  const onItemDelete = async (item) => {
+    const confirmed = window.confirm('Are you sure?');
+    if (!confirmed) return;
+    try {
+      if (selected === 'skills') {
+        await deleteOne(types.SKILL, item._id);
+        dispatch({
+          type: actions.SET_SKILLS,
+          payload: skills.filter((skill) => skill._id !== item._id),
+        });
+      } else if (selected === 'projects') {
+        await deleteOne(types.PROJECT_MINI, item._id);
+        await deleteOne(types.PROJECT_PAGE, item._id);
+        dispatch({
+          type: actions.SET_SKILLS,
+          payload: projects.filter((project) => project._id !== item._id),
+        });
+      }
+    } catch (error) {
+      // :(
+    }
+  };
+
+  const onSkillSubmit = (isNew, item) => {
+    if (isNew) {
+      dispatch({
+        type: actions.SET_SKILLS,
+        payload: [...skills, item],
+      });
+    } else {
+      dispatch({
+        type: actions.SET_SKILLS,
+        payload: skills.map((skill) => {
+          if (skill._id === item._id) return item;
+          return skill;
+        }),
+      });
+    }
   };
 
   return (
@@ -51,15 +93,27 @@ const Dashboard = () => {
 
       <div className="dashboard__container">
         {selected === 'skills' ? (
-          <DashboardList items={skills} onItemClick={onItemClicked} />
+          <DashboardList
+            items={skills}
+            onItemClick={onItemClicked}
+            onItemDelete={onItemDelete}
+          />
         ) : (
-          <DashboardList items={projects} onItemClick={onItemClicked} />
+          <DashboardList
+            items={projects}
+            onItemClick={onItemClicked}
+            onItemDelete={onItemDelete}
+          />
         )}
       </div>
 
       <Popup open={open}>
         {selected === 'skills' ? (
-          <SkillEditor skill={current} popupSetter={setOpen} />
+          <SkillEditor
+            skill={current}
+            popupSetter={setOpen}
+            onSubmit={onSkillSubmit}
+          />
         ) : (
           current.name
         )}
