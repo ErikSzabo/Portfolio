@@ -1,42 +1,50 @@
 .project-page {
-    max-width: 60rem;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: var(--lato);
-    font-size: 1.3rem;
-    line-height: 2rem;
+  max-width: 60rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--lato);
+  font-size: 1.3rem;
+  line-height: 2rem;
 }
 
 .project-page h1 {
-    font-family: var(--montserrat);
+  font-family: var(--montserrat);
+  margin-top: 2rem;
 }
 
-.p-title {
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    margin-top: 3rem;
-    color: var(--text1);
-    border-bottom: 1px solid var(--text2);
-    padding-bottom: 1rem;
-    font-family: var(--montserrat);
+.project-page hr {
+  margin-bottom: 1rem;
+}
+
+.project-page h1:first-child {
+  margin-top: 0;
+}
+
+.project-page > div > ul > li {
+  margin-left: 25px;
+}
+
+.project-page > div > ul {
+  list-style: circle;
+  margin-top: 1rem;
 }
 
 .project-page__description {
-    text-align: justify;
+  text-align: justify;
 }
 
 .project-page__list {
-    padding-left: 20px;
-    margin: 1rem 0;
-    list-style: circle;
+  padding-left: 20px;
+  margin: 1rem 0;
+  list-style: circle;
 }
 
 .project-page__list li {
-    margin: 0.3rem 0;
+  margin: 0.3rem 0;
 }
 
 .awesome-slider {
-    margin-bottom: 5rem;
-    margin-top: 2rem;
+  margin-bottom: 5rem;
+  margin-top: 2rem;
 }
