@@ -20,6 +20,7 @@ const reducer = (state, action) => {
         ...state,
         user: {
           isAuthenticated: true,
+          isLoading: false,
           username: action.payload,
         },
       };
@@ -28,6 +29,7 @@ const reducer = (state, action) => {
         ...state,
         user: {
           isAuthenticated: false,
+          isLoading: false,
         },
       };
     case actions.SET_PROJECTS:
@@ -55,6 +57,7 @@ const Container = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, {
     user: {
       isAuthenticated: false,
+      isLoading: true,
       username: '',
     },
     content: {
@@ -65,13 +68,10 @@ const Container = ({ children }) => {
 
   useEffect(() => {
     const token = localStorage.getItem(TOKEN_KEY);
-    if (token) {
-      auth(token)
-        .then((user) =>
-          dispatch({ type: actions.AUTH, payload: user.username })
-        )
-        .catch();
-    }
+    auth(token)
+      .then((user) => dispatch({ type: actions.AUTH, payload: user.username }))
+      .catch((err) => dispatch({ type: actions.AUTH_FAILED }));
+
     getAll(types.PROJECT)
       .then((projects) =>
         dispatch({ type: actions.SET_PROJECTS, payload: projects })

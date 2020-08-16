@@ -13,7 +13,7 @@ const PrivateRouteTransition = ({
 }) => {
   const {
     state: {
-      user: { isAuthenticated },
+      user: { isAuthenticated, isLoading },
     },
   } = useContext(ApplicationContext);
 
@@ -24,7 +24,11 @@ const PrivateRouteTransition = ({
         path={path}
         {...rest}
         render={(props) =>
-          !isAuthenticated ? <Redirect to="/login" /> : <Component {...props} />
+          !isAuthenticated && !isLoading ? (
+            <Redirect to="/login" />
+          ) : (
+            <Component {...props} />
+          )
         }
       />
     </MountTransition>
