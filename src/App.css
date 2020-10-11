@@ -6,69 +6,115 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
 :root {
-    font-size: 16px;
-    font-family: 'Lato', sans-serif;
-    --lato: 'Lato', sans-serif;
-    --montserrat: 'Montserrat', sans-serif;
-    --text1: #b6b6b6;
-    --text2: gray;
-    --text3: #ececec;
-    --background: #1b1b1b;
-    --background1: #242429;
-    --background2: #1d1d1f;
-    --background3: rgb(42, 42, 48);
-    --transition-speed: 600ms;
-    --highlight: #0099ff;
-    --shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
-    --tag-background: #454e56;
-    --tag-foreground: #b2becd;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  --lato: 'Lato', sans-serif;
+  --montserrat: 'Montserrat', sans-serif;
+  --text1: #b6b6b6;
+  --text2: gray;
+  --text3: #ececec;
+  --background: #1b1b1b;
+  --background1: #242429;
+  --background2: #1d1d1f;
+  --background3: rgb(42, 42, 48);
+  --transition-speed: 600ms;
+  --highlight: #0099ff;
+  --shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+  --tag-background: #454e56;
+  --tag-foreground: #b2becd;
 }
 
 .light {
-    --text1: #3f3f3f;
-    --text2: rgb(104, 104, 104);
-    --text3: #202020;
-    --background: #f8f8f8;
-    --background1: #ffffff;
-    --background2: #cccccc;
-    --background3: #e8f0fe;
-    --tag-background: #b2becd;
-    --tag-foreground: #454e56;
+  --text1: #3f3f3f;
+  --text2: rgb(104, 104, 104);
+  --text3: #202020;
+  --background: #f8f8f8;
+  --background1: #ffffff;
+  --background2: #cccccc;
+  --background3: #e8f0fe;
+  --tag-background: #b2becd;
+  --tag-foreground: #454e56;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: gray;
-    transition: color 1000ms ease-out,
-        background var(--transition-speed) ease-out;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: gray;
+  transition: color 1000ms ease-out, background var(--transition-speed) ease-out;
 }
 
 body {
-    background-color: var(--background);
+  background-color: var(--background);
 }
 
 ::-webkit-scrollbar {
-    width: 0.25rem;
+  width: 0.25rem;
 }
 
 ::-webkit-scrollbar-track {
-    background: #24201e;
+  background: #24201e;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: gray;
+  background: gray;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .text-highlight {
-    color: var(--highlight);
+  color: var(--highlight);
 }
 
 .hidden {
-    display: none;
+  display: none;
+}
+
+/************************************
+************* MARKDOWN **************
+*************************************/
+.hljs {
+  background: var(--background1);
+  margin: 1rem 0;
+  padding: 0.5rem;
+}
+
+.dark .hljs {
+  color: rgb(182, 182, 182);
+}
+
+.dark .hljs-selector-tag {
+  color: rgb(182, 182, 182);
+}
+
+.markdown > ul > li {
+  margin-left: 25px;
+  margin-top: 0.5rem;
+}
+
+.markdown > ul {
+  list-style: circle;
+  margin-top: 1rem;
+}
+
+.markdown h1,
+h2,
+h3,
+h4 {
+  font-family: var(--montserrat);
+  margin-top: 2rem;
+}
+
+.markdown h1 {
+  border-bottom: 1px solid gray;
+}
+
+.markdown > p {
+  margin-top: 1rem;
+}
+
+.markdown a {
+  color: var(--text3);
 }

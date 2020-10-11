@@ -8,26 +8,12 @@
   line-height: 2rem;
 }
 
-.project-page h1 {
-  font-family: var(--montserrat);
-  margin-top: 2rem;
-}
-
 .project-page hr {
   margin-bottom: 1rem;
 }
 
 .project-page h1:first-child {
   margin-top: 0;
-}
-
-.project-page > div > ul > li {
-  margin-left: 25px;
-}
-
-.project-page > div > ul {
-  list-style: circle;
-  margin-top: 1rem;
 }
 
 .project-page__description {

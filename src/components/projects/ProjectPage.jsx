@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import ReactMarkdown from 'react-markdown';
 import AwesomeSlider from 'react-awesome-slider';
 import VisitContent from './VisitContent';
+import CodeBlock from './CodeBlock';
 import { ApplicationContext } from '../Container';
 import './ProjectPage.scoped.css';
 import 'react-awesome-slider/dist/styles.css';
@@ -43,7 +44,11 @@ const ProjectPage = ({ match }) => {
                 <div key={url} data-src={url} />
               ))}
             </AwesomeSlider>
-            <ReactMarkdown source={project.content} />
+            <ReactMarkdown
+              className="markdown"
+              source={project.content}
+              renderers={{ code: CodeBlock }}
+            />
           </div>
         )}
       </div>

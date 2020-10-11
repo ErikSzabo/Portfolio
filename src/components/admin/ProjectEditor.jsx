@@ -5,6 +5,7 @@ import { ApplicationContext, actions } from '../Container';
 import Button from '../generic/Button';
 import { postOne, types, updateOne } from '../../api';
 import './ProjectEditor.scoped.css';
+import CodeBlock from '../projects/CodeBlock';
 
 const ProjectEditor = ({
   match: {
@@ -156,7 +157,11 @@ const ProjectEditor = ({
           onChange={(e) => setContent(e.target.value)}
         />
         <div className="projecteditor__preview">
-          <ReactMarkdown source={content} />
+          <ReactMarkdown
+            className="markdown"
+            source={content}
+            renderers={{ code: CodeBlock }}
+          />
         </div>
       </div>
       <div className="projecteditor__buttons">
