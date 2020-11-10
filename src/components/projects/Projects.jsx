@@ -9,7 +9,6 @@ const filters = {
   frontend: 'FRONTEND',
   backend: 'BACKEND',
   javascript: 'JAVASCRIPT',
-  python: 'PYTHON',
 };
 
 const Projects = () => {

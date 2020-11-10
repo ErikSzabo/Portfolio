@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "@wellyshen/use-web-animations": "^0.5.1",
     "axios": "^0.19.2",
+    "firebase": "^8.0.1",
     "framer-motion": "^2.1.0",
     "highlight.js": "^10.2.1",
     "react": "^16.13.1",

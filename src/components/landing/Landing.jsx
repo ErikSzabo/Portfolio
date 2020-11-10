@@ -19,7 +19,7 @@ const Landing = () => {
           <p className="landing__description">
             I'm an unversity student in Hungary at{' '}
             <span className="text-highlight">
-              Budapest University of Technology and Economcs
+              Budapest University of Technology and Economics
             </span>
             . I want to become a full stack developer, but until then, you can
             check out my projects and things that I'am currently good at. If you
@@ -42,13 +42,6 @@ const Landing = () => {
           </div>
         </div>
       </div>
-      <Link to="/login" className="landing__login">
-        {isAuthenticated ? (
-          <i className="fa fa-unlock-alt fa-2x" aria-hidden="true"></i>
-        ) : (
-          <i className="fa fa-lock fa-2x" aria-hidden="true"></i>
-        )}
-      </Link>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react';
-import { auth, TOKEN_KEY, getAll, types } from '../api';
+import { getProjects, getSkills } from '../api';
 import './Container.scoped.css';
 
 export const ApplicationContext = React.createContext({});
@@ -67,19 +67,12 @@ const Container = ({ children }) => {
   });
 
   useEffect(() => {
-    const token = localStorage.getItem(TOKEN_KEY);
-    auth(token)
-      .then((user) => dispatch({ type: actions.AUTH, payload: user.username }))
-      .catch((err) => dispatch({ type: actions.AUTH_FAILED }));
-
-    getAll(types.PROJECT)
-      .then((projects) =>
-        dispatch({ type: actions.SET_PROJECTS, payload: projects })
-      )
-      .catch();
-    getAll(types.SKILL)
-      .then((skills) => dispatch({ type: actions.SET_SKILLS, payload: skills }))
-      .catch();
+    getProjects().then((projects) =>
+      dispatch({ type: actions.SET_PROJECTS, payload: projects })
+    );
+    getSkills().then((skills) =>
+      dispatch({ type: actions.SET_SKILLS, payload: skills })
+    );
   }, []);
 
   return (

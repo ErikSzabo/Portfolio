@@ -24,7 +24,7 @@ const Project = ({ project }) => {
       <div className="project">
         <img
           onLoad={() => setImgLoaded(true)}
-          src={project.imgPreview}
+          src={project.imgPreviewUrl}
           alt=""
         />
         <div className="project__text">
