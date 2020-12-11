@@ -30,7 +30,7 @@ const Skills = () => {
               <span className="text-highlight">JavaScript / TypeScript</span>,
               the good old HTML, CSS, JS trio. I have a really solid
               understanding about how JavaScript works behind the scenes, and I
-              now the old and the new way of wiriting code in this language. I
+              know the old and the new way of wiriting code in this language. I
               moved on quickly from there to{' '}
               <span className="text-highlight">Electron</span>, and then to{' '}
               <span className="text-highlight">React</span>. Nowadays I know a
