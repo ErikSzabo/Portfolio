@@ -41,11 +41,7 @@ const Nav = () => {
           name="Projects"
           linkTo="/projects"
         />
-        <DropdownItem
-          navToggle={dropdownToggle}
-          name="Skills"
-          linkTo="/skills"
-        />
+        <DropdownItem navToggle={dropdownToggle} name="About" linkTo="/about" />
         <DropdownItem
           navToggle={dropdownToggle}
           name="Contact"

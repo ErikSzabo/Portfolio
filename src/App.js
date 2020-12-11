@@ -17,7 +17,7 @@ const App = () => (
     <Container>
       <AnimatedRoutes>
         <RouteTransition exact path="/" component={Landing} />
-        <RouteTransition path="/skills" component={Skills} />
+        <RouteTransition path="/about" component={Skills} />
         <RouteTransition path="/contact" component={Contact} />
         <RouteTransition exact path="/projects" component={Projects} />
         <RouteTransition path="/projects/:id" component={ProjectPage} />
