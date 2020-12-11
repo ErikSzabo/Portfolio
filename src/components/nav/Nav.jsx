@@ -4,6 +4,7 @@ import ThemeSwitcher from './ThemeSwitcher';
 import Dropdown from './Dropdown';
 import DropdownItem from './DropdownItem';
 import Hamburger from './Hamburger';
+import icon from '../../assets/laptop-code-solid.svg';
 import './Nav.scoped.css';
 
 const Nav = () => {
@@ -20,7 +21,7 @@ const Nav = () => {
         <ul className="menu">
           <li className="menu__item">
             <Link to="/projects">
-              <i className="fa fa-terminal fa-2x" aria-hidden="true"></i>
+              <img src={icon} className="icon" />
             </Link>
           </li>
 

@@ -30,14 +30,13 @@
   background: rgb(0, 162, 255);
 }
 
-.fa-sun-o,
-.fa-moon-o,
-.fa-terminal {
-  color: white;
+.icon {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 35px;
+  height: 35px;
 }
 
 /* Small screens */
