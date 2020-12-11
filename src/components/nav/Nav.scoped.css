@@ -46,9 +46,7 @@
     height: 50px;
   }
 
-  .fa-sun-o,
-  .fa-moon-o,
-  .fa-terminal {
+  .icon {
     position: absolute;
     left: 50%;
     top: 50%;
