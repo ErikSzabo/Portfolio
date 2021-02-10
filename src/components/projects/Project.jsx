@@ -31,9 +31,10 @@ const Project = ({ project }) => {
           <h3>{project.name}</h3>
           <p>{project.description}</p>
           <div className="project__tags">
-            {project.tags.map((tag, index) => {
-              return <Tag key={index} name={tag} />;
-            })}
+            {project.tags &&
+              project.tags.map((tag, index) => {
+                return <Tag key={index} name={tag} />;
+              })}
           </div>
         </div>
       </div>
