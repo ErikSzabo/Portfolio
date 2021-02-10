@@ -20,7 +20,7 @@ const App = () => (
         <RouteTransition path="/about" component={Skills} />
         <RouteTransition path="/contact" component={Contact} />
         <RouteTransition exact path="/projects" component={Projects} />
-        <RouteTransition path="/projects/:id" component={ProjectPage} />
+        <RouteTransition exact path="/projects/:id" component={ProjectPage} />
       </AnimatedRoutes>
     </Container>
   </Router>
