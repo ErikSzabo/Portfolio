@@ -1,4 +1,4 @@
-import firestore from './firebase';
+import matter from 'gray-matter';
 
 export const types = {
   PROJECT: 'projects',
@@ -6,24 +6,30 @@ export const types = {
 };
 
 export const getProjects = async () => {
-  const snapshot = await firestore.collection(types.PROJECT).get();
-  const projects = snapshot.docs.map((project) => {
-    return { _id: project.id, ...project.data() };
-  });
-  projects.forEach(
-    (project) =>
-      (project.content = project.content
-        .replaceAll('\\n', '\n')
-        .replaceAll('\\"', '"')
-        .replaceAll('\\\\[', '\\['))
-  );
+  const projects = [];
+  let mapper = await fetch('/static/projects/content-map.json');
+  mapper = await mapper.json();
+  for (let path of mapper) {
+    const project = await fetch(`/static/projects/${path}`).then((res) =>
+      res.text()
+    );
+    const parsedMd = matter(project);
+    projects.push({ ...parsedMd.data, content: parsedMd.content });
+  }
+
   return projects;
 };
 
 export const getSkills = async () => {
-  const snapshot = await firestore.collection(types.SKILL).get();
-  const skills = snapshot.docs.map((skill) => {
-    return { _id: skill.id, ...skill.data() };
-  });
+  const skills = [];
+  let mapper = await fetch('/static/skills/content-map.json');
+  mapper = await mapper.json();
+  for (let path of mapper) {
+    const skill = await fetch(`/static/skills/${path}`).then((res) =>
+      res.json()
+    );
+    skills.push(skill);
+  }
+
   return skills;
 };

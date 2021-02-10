@@ -10,7 +10,7 @@
 .skill__description {
   font-size: 0.95rem;
   line-height: 1.5rem;
-  color: var(--text1);
+  color: var(--text2);
   font-family: var(--lato);
 }
 

@@ -1,0 +1,6 @@
+{
+  "_id": "github",
+  "name": "Git, Github",
+  "icon": "https://i.ibb.co/R2KSLVP/git-logo.png",
+  "description": "I've always used git with almost all of my projects. I also wrote some nice CI stuff with github actions."
+}

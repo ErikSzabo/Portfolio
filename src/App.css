@@ -10,8 +10,8 @@
   font-family: 'Lato', sans-serif;
   --lato: 'Lato', sans-serif;
   --montserrat: 'Montserrat', sans-serif;
-  --text1: #b6b6b6;
-  --text2: gray;
+  --text1: #cccccc;
+  --text2: rgb(158, 158, 158);
   --text3: #ececec;
   --background: #1b1b1b;
   --background1: #242429;
@@ -40,7 +40,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: gray;
+  color: var(--text2);
   transition: color 1000ms ease-out, background var(--transition-speed) ease-out;
 }
 

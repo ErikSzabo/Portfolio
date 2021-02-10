@@ -36,7 +36,9 @@ const Skills = () => {
               <span className="text-highlight">React</span>. Nowadays I know a
               lot of things about both of these frameworks. This also includes{' '}
               <span className="text-highlight">NodeJS </span>
-              and npm, I'm quite familiar with both of them.
+              and npm, I'm quite familiar with both of them.{' '}
+              <span className="text-highlight">Next.js</span> and{' '}
+              <span className="text-highlight">Gatsby</span> is also on my list.
             </p>
             <p>
               After this, I started my studies at the University. Here I learnt
@@ -68,8 +70,8 @@ const Skills = () => {
             </p>
             <p>
               I'm familiar with backend{' '}
-              <span className="text-highlight">REST api</span>s, and I'm looking
-              forward to learn about GraphQL.
+              <span className="text-highlight">REST api</span>s, and I have a
+              basic knowledge about GraphQL.
             </p>
             <p>
               I have passed the intermediate{' '}
