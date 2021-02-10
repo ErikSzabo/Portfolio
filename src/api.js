@@ -10,9 +10,9 @@ export const getProjects = async () => {
   let mapper = await fetch('/static/projects/content-map.json');
   mapper = await mapper.json();
   for (let path of mapper) {
-    const project = await fetch(`/static/projects/${path}`).then((res) =>
-      res.text()
-    );
+    const project = await fetch(
+      `https://raw.githubusercontent.com/ErikSzabo/ErikSzabo.github.io/source/public/static/projects/${path}`
+    ).then((res) => res.text());
     const parsedMd = matter(project);
     projects.push({ ...parsedMd.data, content: parsedMd.content });
   }
