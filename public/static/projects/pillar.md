@@ -48,18 +48,27 @@ It's highly recommended to setup the moderation role (with !set-role mod @role) 
 **Music**
 
 !pause -- paueses the current music
+
 !play <youtube link or name> -- plays a music by link or name
+  
 !queue -- shows the music queue
+
 !resume -- resumes the paused music
+
 !skip -- skips the current music
+
 !stop -- stops the music and clears the queue
+
 !volume <number> -- sets or displays the volume
+  
 !music-channel <text channel> -- sets the music channel, by default every channel is allowed, (write 'off' if you want to reset this)
 
 **Reminder**
 
 !r-add <mention> <2020.12.24-20:30> "name" "description" -- adds a new reminder
+  
 !r-delete "name" -- deletes a reminder
+
 !r-info -- displays the currently scheduled reminders
 
 **Poll**
@@ -69,12 +78,17 @@ It's highly recommended to setup the moderation role (with !set-role mod @role) 
 **Welcome-Leave**
 
 !welcome-message <message> -- sets the welcome message for the server, \[USER\] placeholder can be used, set to "off" to disable
+  
 !leave-message <message> -- sets the leave message for the server, \[USER\] placeholder can be used, set to "off" to disable
+  
 !welcome-channel <text channel> -- welcome, and leave messages will appear in this channel, set to "off" to disable
 
 **General**
 
 !set-role <role type> <role> -- sets the required roles for specific commands For help: set-role help
+  
 !language new language -- sets the new language for your server
+
 !timezone new timezone -- sets the new timezone for your server, or displays the currently available timezones if no arguments provided
+
 !help -- displays this help page
